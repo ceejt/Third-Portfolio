@@ -44,6 +44,7 @@ const Social = () => {
         </svg>
         <h2>Social</h2>
       </div>
+
       <div className="flex flex-wrap gap-4">
         {socialLinks.map((link, index) => (
           <a
@@ -63,3 +64,5 @@ const Social = () => {
     </section>
   );
 };
+
+export default Social;

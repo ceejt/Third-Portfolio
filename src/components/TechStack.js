@@ -1,23 +1,27 @@
-import React from 'react';
-import { useInView } from 'react-intersection-observer';
-import { portfolioData } from '../data/portfolioData';
+import React from "react";
+import { useInView } from "react-intersection-observer";
+import { portfolioData } from "../data/portfolioData";
 
 const TechStack = () => {
   const { techStack } = portfolioData;
   const { ref, inView } = useInView({
     threshold: 0.1,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   return (
-    <section 
-      id="tech-stack" 
+    <section
+      id="tech-stack"
       ref={ref}
-      className={`card animate-on-scroll ${inView ? 'visible' : ''}`}
+      className={`card animate-on-scroll ${inView ? "visible" : ""}`}
     >
       <div className="flex items-center gap-2 mb-6">
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+          <path
+            fillRule="evenodd"
+            d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
         </svg>
         <h2>Tech Stack & Skills</h2>
       </div>
@@ -75,7 +79,9 @@ const TechStack = () => {
             {techStack.languages.map((lang, index) => (
               <div key={index} className="flex justify-between items-center">
                 <span className="text-p">{lang.name}</span>
-                <span className="text-h4 text-primary font-fira">{lang.level}</span>
+                <span className="text-h4 text-primary font-fira">
+                  {lang.level}
+                </span>
               </div>
             ))}
           </div>
