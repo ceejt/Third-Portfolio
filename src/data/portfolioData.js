@@ -11,11 +11,11 @@ export const portfolioData = {
 
   about: {
     intro:
-      "Write 2-3 sentences about yourself and what you do. This is your elevator pitch.",
+      "I am an aspiring web developer and UI designer with a strong foundation in computer science, known for being adaptable, fast-learning, and creative, with a balanced sense of humor that informs my approach to problem-solving and design.",
     experience:
-      "Describe your professional experience and key achievements. What have you accomplished?",
+      "I am currently a sophomore Computer Science student at a leading university in the Philippines, with experience in online programming certifications and a long-standing passion for technology developed since high school, including success in pitching competitions.",
     current:
-      "Share what you're currently working on or learning. What's next for you?",
+      "At present, I am sharpening my web development and design skills through hands-on projects such as BudgetWise and Snippit, daily Figma practice, and actively preparing to secure a project-based web development role within the month.",
   },
 
   techStack: {
