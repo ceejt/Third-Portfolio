@@ -1,0 +1,160 @@
+export const portfolioData = {
+  profile: {
+    name: "Cyril Josef A. Tinae",
+    title: "Aspiring Web Developer | UI Designer",
+    location: "Cebu City, Philippines",
+    email: "tinaecyriljosef@gmail.com",
+    phone: "+X63-917-193-7051",
+    resumeUrl: "/assets/Cyril-Josef-Tinae_CV1.pdf",
+    profileImage: "/assets/images/profile.jpg",
+  },
+
+  about: {
+    intro:
+      "Write 2-3 sentences about yourself and what you do. This is your elevator pitch.",
+    experience:
+      "Describe your professional experience and key achievements. What have you accomplished?",
+    current:
+      "Share what you're currently working on or learning. What's next for you?",
+  },
+
+  techStack: {
+    frontend: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "C#"],
+    backend: ["Node.js", "Python", "SQL", "Express", "Supabase", "C", "C++"],
+    tools: ["Git", "VS Code", "Figma"],
+    languages: [
+      { name: "English", level: "Fluent" },
+      { name: "Filipino", level: "Fluent" },
+      { name: "Bisaya", level: "Native" },
+      { name: "Chavacano", level: "Native" },
+    ],
+  },
+
+  leadership: [
+    {
+      title: "Hire me!",
+      description: "Actively seeking for employment",
+      year: "2025",
+    },
+    {
+      title: "The Odin Project",
+      description: "Completed Foundations course",
+      year: "2025",
+    },
+    {
+      title: "CMSC 130 Project Showcase",
+      description: "3rd Place",
+      year: "2025",
+    },
+    {
+      title: "BS Computer Science",
+      description: "University of the Philippines - Cebu",
+      year: "2024",
+    },
+    {
+      title: "Ateneo de Zamboanga University",
+      description: "Graduated with High Honors",
+      year: "2024",
+    },
+    {
+      title: "DICT Regional Pitching Competition",
+      description:
+        "Placed 4th against collegteams in startup pitch competitition",
+      year: "2024",
+    },
+    {
+      title: "Eureka Stem AO",
+      description: "Secretary",
+      year: "2023",
+    },
+    {
+      title: "The Oculus Publications",
+      description: "Sports Editor",
+      year: "2023",
+    },
+    {
+      title: "First Build",
+      description: "Learned Scratch and Arduino robotics in Grade 8",
+      year: "2019",
+    },
+  ],
+
+  certifications: [
+    { title: "The Odin Project", subtitle: "Foundations Course" },
+    { title: "The Odin Project", subtitle: "Intermediate HTML and CSS" },
+    { title: "freeCodeCamp", subtitle: "Front End Development Libraries" },
+  ],
+
+  projects: [
+    {
+      title: "BudgetWise",
+      description: "All-in-one financial management platform",
+      url: "project1.com",
+      type: "Web App",
+    },
+    {
+      title: "BudgetWise Landing Page",
+      description: "Dynamic landing page",
+      url: "project2.com",
+      type: "Website",
+    },
+    {
+      title: "Snippit",
+      description: "Smart short-form clipping tool",
+      url: "project1.com",
+      type: "Web App",
+    },
+    {
+      title: "Figma Designs",
+      description: "UI Designs",
+      url: "project1.com",
+      type: "UI Designs",
+    },
+  ],
+
+  goals: [
+    "Launch my career as a web developer by securing a role where I can build real products as soon as possible.",
+    "Generate my own income early this year by applying my skills in practical, client- or product-driven work.",
+  ],
+
+  afterhours: [
+    {
+      title: "Films",
+      description:
+        "Watching films and logging thoughts as I go.(Letterboxd: feelm_ct - lets be friends)",
+    },
+    {
+      title: "Sports",
+      description:
+        "Following basketball and other sports. Go Spurs Go, Wemby my GOAT",
+    },
+    {
+      title: "Writing",
+      description:
+        "Writing about sports beyond the scoreboard. articles, breakdowns, feature",
+    },
+    {
+      title: "Cars",
+      description:
+        "Learning how cars are engineered and reviewed. P.S. dream car: Mazda 3",
+    },
+  ],
+
+  social: {
+    linkedin: "https://linkedin.com/in/cj-tinae",
+    github: "https://github.com/ceejt",
+    instagram: "https://instagram.com/cyriljosef",
+    facebook: "https://facebook.com/cyriljosef.tinae",
+  },
+
+  gallery: [
+    "/assets/images/gallery/gallery-1.jpg",
+    "/assets/images/gallery/gallery-2.jpg",
+    "/assets/images/gallery/gallery-3.jpg",
+    "/assets/images/gallery/gallery-4.jpg",
+    "/assets/images/gallery/gallery-5.jpg",
+    "/assets/images/gallery/gallery-6.jpg",
+    "/assets/images/gallery/gallery-7.jpg",
+    "/assets/images/gallery/gallery-8.jpg",
+  ],
+};
