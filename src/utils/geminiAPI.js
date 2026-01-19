@@ -1,70 +1,88 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { portfolioData } from "../data/portfolioData";
 
-const genAI = new GoogleGenerativeAI(
-  process.env.REACT_APP_GEMINI_API_KEY || "",
-);
+const cache = new Map();
+const CACHE_DURATION = 10 * 60 * 1000;
 
-const portfolioContext = `
-You are a helpful assistant for ${portfolioData.profile.name}'s portfolio website.
+const getCachedResponse = (query) => {
+  const key = query.toLowerCase().trim();
+  const cached = cache.get(key);
+  if (cached && Date.now() - cached.time < CACHE_DURATION) {
+    console.log("Cache hit!");
+    return cached.response;
+  }
+  return null;
+};
 
-Name: ${portfolioData.profile.name}
-Title: ${portfolioData.profile.title}
-Experience: ${portfolioData.about.experience}
-Email: ${portfolioData.profile.email}
+const setCachedResponse = (query, response) => {
+  cache.set(query.toLowerCase().trim(), {
+    response,
+    time: Date.now(),
+  });
+};
 
-About: ${portfolioData.about.intro}
-Projects: ${portfolioData.projects.map((p) => `- ${p.title}: ${p.description}`).join("\n")}
-Hobbies: ${portfolioData.afterhours}
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-Skills: ${portfolioData.techStack.frontend.join(", ")}, ${portfolioData.techStack.backend.join(", ")}
-
-Answer questions about this person's background, skills, and projects. Keep responses concise and friendly.
-`;
+const retryWithBackoff = async (fn, maxRetries = 2) => {
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      return await fn();
+    } catch (error) {
+      if (error.message?.includes("quota")) {
+        const waitTime = Math.pow(2, i) * 3000;
+        console.log(`Rate limit. Waiting ${waitTime / 1000}s...`);
+        await wait(waitTime);
+        continue;
+      }
+      throw error;
+    }
+  }
+  throw new Error("Max retries reached.");
+};
 
 export const sendMessage = async (userMessage, conversationHistory = []) => {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
+    const cached = getCachedResponse(userMessage);
+    if (cached) return cached;
 
-    const messages = [
-      { role: "user", parts: [{ text: portfolioContext }] },
-      {
-        role: "model",
-        parts: [
-          {
-            text: "I understand. I'm here to help answer questions about Cyril's portfolio. How can I help you?",
-          },
-        ],
-      },
-      ...conversationHistory,
-      { role: "user", parts: [{ text: userMessage }] },
-    ];
+    // Call Netlify Function instead of direct API
+    const response = await retryWithBackoff(async () => {
+      const res = await fetch("/.netlify/functions/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: userMessage,
+          conversationHistory: conversationHistory,
+        }),
+      });
 
-    const chat = model.startChat({
-      history: messages.slice(0, -1),
-      generationConfig: {
-        maxOutputTokens: 200,
-        temperature: 0.7,
-      },
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+
+      return await res.json();
     });
 
-    const result = await chat.sendMessage(userMessage);
-    const response = await result.response;
-    return response.text();
+    const text = response.response;
+    setCachedResponse(userMessage, text);
+    return text;
   } catch (error) {
-    console.error("Gemini API Error:", error);
-    if (error.message?.includes("API key")) {
-      return "I'm having trouble connecting. Please check the API key configuration.";
+    console.error("API Error:", error);
+
+    if (error.message?.includes("quota")) {
+      return "I'm at my rate limit. Please wait 30 seconds and try again! ^^";
     }
-    return "I'm having trouble responding right now. Please try again.";
+
+    return "Sorry, I'm having trouble right now :( Please try again in a moment.";
   }
 };
 
 export const getSuggestions = () => {
   return [
-    "Tell me about Cyril's experience",
-    "What projects has Cyril worked on?",
-    "What are Cyril's technical skills ? ",
-    "How can I contact Cyril?",
+    "Tell me about CJ's experience",
+    "What projects has CJ worked on?",
+    "What are CJ's technical skills ? ",
+    "How can I contact CJ?",
   ];
 };
