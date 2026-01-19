@@ -32,7 +32,7 @@ const Goals = () => {
             key={index}
             className="flex items-start gap-3 text-p leading-relaxed"
           >
-            <span className="text-primary mt-1">•</span>
+            <span className="text-primary -mt-0.5">•</span>
             <span>{goal}</span>
           </li>
         ))}

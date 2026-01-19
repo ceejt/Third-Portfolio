@@ -5,6 +5,7 @@ const assetPath = (path) => `${PUBLIC_URL}${path}`;
 export const portfolioData = {
   profile: {
     name: "Cyril Josef A. Tinae",
+    nickname: "CJ",
     title: "Aspiring Web Developer | UI Designer",
     location: "Cebu City, Philippines",
     email: "tinaecyriljosef@gmail.com",
@@ -97,7 +98,7 @@ export const portfolioData = {
     {
       title: "BudgetWise",
       description: "All-in-one financial management platform for students",
-      url: "project1.com",
+      url: "Under renovation :(",
       type: "Web App",
     },
     {
@@ -109,13 +110,13 @@ export const portfolioData = {
     {
       title: "Snippit",
       description: "Smart short-form clipping tool",
-      url: "project1.com",
+      url: "Under construction :(",
       type: "Web App",
     },
     {
       title: "Figma Designs",
       description: "UI Designs",
-      url: "project1.com",
+      url: "Coming soon!",
       type: "UI Designs",
     },
   ],

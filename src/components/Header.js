@@ -19,18 +19,21 @@ const Header = () => {
           <img
             src={profile.profileImage}
             alt={profile.name}
-            className="w-36 h-36 rounded-lg object-cover border-2 border-border"
+            className="w-40 h-40 rounded-lg object-cover border-2 border-border"
             loading="eager"
           />
         </div>
 
         <div className="flex-1">
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex items-baseline gap-3 mb-2">
             <h1 className="text-2xl md:text-3xl font-bold">{profile.name}</h1>
-            <span class>💻</span>
+            <h4 className="text-sm text-primary font-fira">
+              ({profile.nickname})
+            </h4>
+            {/* <span className="text-2xl md:text-3xl">💻</span> */}
           </div>
 
-          <div className="flex items-center gap-1 mb-1">
+          <div className="flex items-center gap-1 mb-2">
             <svg
               className="w-4 h-4 text-primary flex-shrink-0"
               fill="currentColor"
@@ -50,7 +53,7 @@ const Header = () => {
           <div className="flex flex-wrap gap-3">
             <button
               onClick={handleViewResume}
-              className="btn-primary flex items-center gap-2"
+              className="btn-primary flex items-center gap-2 text-h3 h-9"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z" />
@@ -61,7 +64,7 @@ const Header = () => {
 
             <button
               onClick={handleSendEmail}
-              className="btn-secondary flex items-center gap-2"
+              className="btn-secondary flex items-center gap-2 text-h3 h-9"
             >
               <svg
                 className="w-4 h-4"

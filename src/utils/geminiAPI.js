@@ -10,18 +10,21 @@ You are a helpful assistant for ${portfolioData.profile.name}'s portfolio websit
 
 Name: ${portfolioData.profile.name}
 Title: ${portfolioData.profile.title}
+Experience: ${portfolioData.about.experience}
 Email: ${portfolioData.profile.email}
 
 About: ${portfolioData.about.intro}
+Projects: ${portfolioData.projects.map((p) => `- ${p.title}: ${p.description}`).join("\n")}
+Hobbies: ${portfolioData.afterhours}
 
 Skills: ${portfolioData.techStack.frontend.join(", ")}, ${portfolioData.techStack.backend.join(", ")}
 
-Please answer questions about this person's background, skills, and projects. Keep responses concise and friendly.
+Answer questions about this person's background, skills, and projects. Keep responses concise and friendly.
 `;
 
 export const sendMessage = async (userMessage, conversationHistory = []) => {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
     const messages = [
       { role: "user", parts: [{ text: portfolioContext }] },

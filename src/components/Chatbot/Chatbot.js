@@ -9,7 +9,7 @@ const Chatbot = () => {
     {
       role: "assistant",
       content:
-        "Hi! I'm here to help you learn more about Cyril's portfolio. Feel free to ask me anything!",
+        "Hi! I'm TinAI, helping you learn more about Cyril's portfolio. Feel free to ask me anything!",
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
@@ -62,7 +62,7 @@ const Chatbot = () => {
           <div className="flex items-center justify-between p-4 border-b border-border">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <h3 className="font-semibold">Portfolio Assistant</h3>
+              <h3 className="font-semibold">TinAI</h3>
             </div>
             <button
               onClick={() => setIsOpen(false)}
@@ -124,41 +124,58 @@ const Chatbot = () => {
         </div>
       )}
 
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-secondary dark:bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40"
-        aria-label="Open chat"
-      >
-        {isOpen ? (
-          <svg
-            className="w-6 h-6 text-white dark:text-secondary"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        ) : (
-          <svg
-            className="w-6 h-6 text-white dark:text-secondary"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
-            />
-          </svg>
+      
+
+      {/* Floating Button with Popup */}
+      <div className="fixed bottom-6 right-6 z-40">
+        {/* Popup Message - Only show when chat is closed */}
+        {!isOpen && (
+          <div className="absolute bottom-16 right-0 mb-2 animate-bounce">
+            <div className="bg-secondary dark:bg-primary text-white dark:text-secondary px-4 py-2 rounded-lg shadow-lg whitespace-nowrap text-sm font-medium">
+              Ask TinAI!
+              {/* Small arrow pointing down */}
+              <div className="absolute -bottom-1 right-6 w-2 h-2 bg-secondary dark:bg-primary transform rotate-45"></div>
+            </div>
+          </div>
         )}
-      </button>
+
+        {/* Chat Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-14 h-14 bg-secondary dark:bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+          aria-label="Open chat"
+        >
+          {isOpen ? (
+            <svg
+              className="w-6 h-6 text-white dark:text-secondary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              className="w-6 h-6 text-white dark:text-secondary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+              />
+            </svg>
+          )}
+        </button>
+      </div>
     </>
   );
 };

@@ -75,12 +75,14 @@ const TechStack = () => {
         {/* Languages */}
         <div>
           <h3 className="font-semibold mb-3">Languages</h3>
-          <div className="space-y-2">
+          <div className="flex flex-wrap gap-2">
             {techStack.languages.map((lang, index) => (
               <div key={index} className="flex justify-between items-center">
-                <span className="text-p">{lang.name}</span>
-                <span className="text-h4 text-primary font-fira">
-                  {lang.level}
+                <span
+                  key={index}
+                  className="px-3 py-1 bg-light-bg dark:bg-dark-bg border border-border rounded-md text-h4 hover-lift"
+                >
+                  {lang.name} ({lang.level})
                 </span>
               </div>
             ))}
