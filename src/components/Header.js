@@ -19,7 +19,7 @@ const Header = () => {
           <img
             src={profile.profileImage}
             alt={profile.name}
-            className="w-40 h-40 rounded-lg object-cover border-2 border-border"
+            className="w-40 h-40 rounded-lg object-cover object-top border-2 border-border"
             loading="eager"
           />
         </div>
