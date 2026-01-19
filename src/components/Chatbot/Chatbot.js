@@ -12,12 +12,32 @@ const Chatbot = () => {
         "Hi! I'm TinAI, helping you learn more about Cyril's portfolio. Feel free to ask me anything!",
     },
   ]);
+
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
+  const [showPopup, setShowPopup] = useState(true);
+  const [isPopupFading, setIsPopupFading] = useState(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    // Start fade out after 11 seconds
+    const fadeTimer = setTimeout(() => {
+      setIsPopupFading(true);
+    }, 11000);
+
+    // Completely hide after 12 seconds
+    const hideTimer = setTimeout(() => {
+      setShowPopup(false);
+    }, 12000);
+    // Cleanup timers
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(hideTimer);
+    };
+  }, []);
 
   useEffect(() => {
     scrollToBottom();
@@ -123,8 +143,6 @@ const Chatbot = () => {
           <ChatInput onSend={handleSendMessage} isLoading={isLoading} />
         </div>
       )}
-
-      
 
       {/* Floating Button with Popup */}
       <div className="fixed bottom-6 right-6 z-40">
