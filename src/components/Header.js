@@ -19,7 +19,7 @@ const Header = () => {
           <img
             src={profile.profileImage}
             alt={profile.name}
-            className="w-32 h-32 rounded-lg object-cover border-2 border-border"
+            className="w-36 h-36 rounded-lg object-cover border-2 border-border"
             loading="eager"
           />
         </div>
@@ -27,12 +27,23 @@ const Header = () => {
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-2">
             <h1 className="text-2xl md:text-3xl font-bold">{profile.name}</h1>
-            <span className="w-4 h-4 bg-secondary dark:bg-primary rounded-sm"></span>
+            <span class>💻</span>
           </div>
 
-          <p className="text-sm text-primary font-fira mb-1">
-            📍 {profile.location}
-          </p>
+          <div className="flex items-center gap-1 mb-1">
+            <svg
+              className="w-4 h-4 text-primary flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <p className="text-sm text-primary font-fira">{profile.location}</p>
+          </div>
 
           <p className="text-p mb-4">{profile.title}</p>
 

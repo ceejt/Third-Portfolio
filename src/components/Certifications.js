@@ -24,6 +24,13 @@ const Certifications = () => {
 
       <div className="space-y-4">
         {certifications.map((cert, index) => (
+          <a
+            key={index}
+            href={cert.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className = "block"
+          >
           <div
             key={index}
             className="border border-border rounded-lg p-4 hover-lift"
@@ -33,6 +40,7 @@ const Certifications = () => {
               {cert.subtitle}
             </p>
           </div>
+          </a>
         ))}
       </div>
     </section>

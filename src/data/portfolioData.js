@@ -1,21 +1,25 @@
+const PUBLIC_URL = process.env.PUBLIC_URL || "";
+
+const assetPath = (path) => `${PUBLIC_URL}${path}`;
+
 export const portfolioData = {
   profile: {
     name: "Cyril Josef A. Tinae",
     title: "Aspiring Web Developer | UI Designer",
     location: "Cebu City, Philippines",
     email: "tinaecyriljosef@gmail.com",
-    phone: "+X63-917-193-7051",
-    resumeUrl: "/assets/Cyril-Josef-Tinae_CV1.pdf",
-    profileImage: "/assets/images/profile.jpg",
+    phone: "+63-917-193-7051",
+    resumeUrl: assetPath("/assets/Cyril-Josef-Tinae_CV1.pdf"),
+    profileImage: assetPath("/assets/images/profile.jpg"),
   },
 
   about: {
     intro:
       "I am an aspiring web developer and UI designer with a strong foundation in computer science, known for being adaptable, fast-learning, and creative, with a balanced sense of humor that informs my approach to problem-solving and design.",
     experience:
-      "I am currently a sophomore Computer Science student at a leading university in the Philippines, with experience in online programming certifications and a long-standing passion for technology developed since high school, including success in pitching competitions.",
+      "I am currently a sophomore Computer Science student at University of the Philippines, with experience in online programming courses and certifications, and a long-standing passion for technology developed since high school, including success in a pitching competition.",
     current:
-      "At present, I am sharpening my web development and design skills through hands-on projects such as BudgetWise and Snippit, daily Figma practice, and actively preparing to secure a project-based web development role within the month.",
+      "At present, I am sharpening my web development and design skills through hands-on projects such as BudgetWise and Snippit, daily Figma and Leetcode practice, as I actively preparing to secure a project-based web development role within the month.",
   },
 
   techStack: {
@@ -80,7 +84,11 @@ export const portfolioData = {
   ],
 
   certifications: [
-    { title: "The Odin Project", subtitle: "Foundations Course" },
+    {
+      title: "The Odin Project",
+      subtitle: "Foundations Course",
+      url: "https://ceejt.github.io/odin-calculator",
+    },
     { title: "The Odin Project", subtitle: "Intermediate HTML and CSS" },
     { title: "freeCodeCamp", subtitle: "Front End Development Libraries" },
   ],
@@ -88,14 +96,14 @@ export const portfolioData = {
   projects: [
     {
       title: "BudgetWise",
-      description: "All-in-one financial management platform",
+      description: "All-in-one financial management platform for students",
       url: "project1.com",
       type: "Web App",
     },
     {
       title: "BudgetWise Landing Page",
       description: "Dynamic landing page",
-      url: "project2.com",
+      url: "budgetwise-mvp.vercel.app",
       type: "Website",
     },
     {
@@ -121,17 +129,17 @@ export const portfolioData = {
     {
       title: "Films",
       description:
-        "Watching films and logging thoughts as I go.(Letterboxd: feelm_ct - lets be friends)",
+        "Watching films and logging thoughts as I go. (Letterboxd: feelm_ct -lets be friends)",
     },
     {
       title: "Sports",
       description:
-        "Following basketball and other sports. Go Spurs Go, Wemby my GOAT",
+        "Following basketball and other sports. Go Spurs Go, Wemby my GOAT!",
     },
     {
       title: "Writing",
       description:
-        "Writing about sports beyond the scoreboard. articles, breakdowns, feature",
+        "Writing about sports beyond the scoreboard-articles, breakdowns, feature",
     },
     {
       title: "Cars",
@@ -148,13 +156,13 @@ export const portfolioData = {
   },
 
   gallery: [
-    "/assets/images/gallery/gallery-1.jpg",
-    "/assets/images/gallery/gallery-2.jpg",
-    "/assets/images/gallery/gallery-3.jpg",
-    "/assets/images/gallery/gallery-4.jpg",
-    "/assets/images/gallery/gallery-5.jpg",
-    "/assets/images/gallery/gallery-6.jpg",
-    "/assets/images/gallery/gallery-7.jpg",
-    "/assets/images/gallery/gallery-8.jpg",
+    assetPath("/assets/images/gallery/gallery-1.jpg"),
+    assetPath("/assets/images/gallery/gallery-2.jpg"),
+    assetPath("/assets/images/gallery/gallery-3.jpeg"),
+    assetPath("/assets/images/gallery/gallery-4.jpg"),
+    assetPath("/assets/images/gallery/gallery-5.jpg"),
+    assetPath("/assets/images/gallery/gallery-6.jpg"),
+    assetPath("/assets/images/gallery/gallery-7.jpg"),
+    assetPath("/assets/images/gallery/gallery-8.jpg"),
   ],
 };
