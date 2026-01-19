@@ -1,5 +1,3 @@
-import { portfolioData } from "../data/portfolioData";
-
 const cache = new Map();
 const CACHE_DURATION = 10 * 60 * 1000;
 
