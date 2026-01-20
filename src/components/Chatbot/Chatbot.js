@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import ChatMessage from "./ChatMessage";
 import ChatInput from "./ChatInput";
-import { sendMessage, getSuggestions } from "../../utils/geminiAPI";
+import { sendMessage, getSuggestions } from "../../utils/chatLogic";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
