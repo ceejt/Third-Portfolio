@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      {/* Theme Toggle */} 
+      {/* Theme Toggle */}
       <ThemeToggle />
 
       {/* Main Content */}
@@ -31,6 +31,11 @@ function App() {
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 space-y-8">
             <About />
+
+            <div className="lg:hidden">
+              <Leadership />
+            </div>
+
             <TechStack />
             <Certifications />
             <Projects />
@@ -42,7 +47,7 @@ function App() {
           </div>
 
           {/* Right Column - Leadership */}
-          <div className="lg:col-span-1">
+          <div className="hidden lg:block lg:col-span-1">
             <Leadership />
           </div>
         </div>

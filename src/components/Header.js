@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header className="animate-fade-in">
-      <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
         <div className="flex-shrink-0">
           <div className="w-40 h-40 rounded-lg overflow-hidden">
             <img
@@ -26,8 +26,8 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="flex-1">
-          <div className="flex items-baseline gap-3 mb-2">
+        <div className="flex-1 text-center md:text-left">
+          <div className="flex items-baseline justify-center md:justify-start gap-3 mb-2">
             <h1 className="text-2xl md:text-3xl font-bold">{profile.name}</h1>
             <h4 className="text-sm text-primary font-fira">
               ({profile.nickname})
@@ -35,7 +35,7 @@ const Header = () => {
             {/* <span className="text-2xl md:text-3xl">💻</span> */}
           </div>
 
-          <div className="flex items-center gap-1 mb-2">
+          <div className="flex items-center justify-center md:justify-start gap-1 mb-2">
             <svg
               className="w-4 h-4 text-primary flex-shrink-0"
               fill="currentColor"
@@ -52,7 +52,7 @@ const Header = () => {
 
           <p className="text-p mb-4">{profile.title}</p>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 justify-center md:justify-start">
             <button
               onClick={handleViewResume}
               className="btn-primary flex items-center gap-2 text-h3 h-9"
