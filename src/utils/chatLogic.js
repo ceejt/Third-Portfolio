@@ -146,6 +146,7 @@ const matchResponse = (message) => {
   if (patterns.location.test(lowerMessage)) return responses.location;
   if (patterns.resume.test(lowerMessage)) return responses.resume;
   if (patterns.goals.test(lowerMessage)) return responses.goals;
+  if (patterns.afterhours.test(lowerMessage)) return responses.afterhours;
 
   // default
   return responses.default[
