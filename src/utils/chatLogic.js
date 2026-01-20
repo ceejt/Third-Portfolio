@@ -63,7 +63,8 @@ const patterns = {
     tools: /\b(tool|software|git|github|vscode|figma|postman)\b/i,
   },
   projects: {
-    general: /\b(project|work|portfolio|built|created|developed|made)\b/i,
+    general:
+      /\b(project|work|portfolio|built|created|developed|made|what projects|worked on)\b/i,
     portfolio: /\b(this site|this website|this portfolio|portfolio site)\b/i,
     count: /\b(how many|number of)\b/i,
   },
