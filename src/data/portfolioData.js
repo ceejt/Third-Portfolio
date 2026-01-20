@@ -96,6 +96,11 @@ export const portfolioData = {
       subtitle: "Intermediate HTML and CSS",
       url: "https://ceejt.github.io/odin-dashboard/",
     },
+    {
+      title: "The Odin Project",
+      subtitle: "Foundations Course",
+      url: "https://ceejt.github.io/odin-calculator/",
+    },
     { title: "freeCodeCamp", subtitle: "Front End Development Libraries" },
   ],
 
