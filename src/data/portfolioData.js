@@ -7,7 +7,7 @@ export const portfolioData = {
     name: "Cyril Josef A. Tinae",
     nickname: "CJ",
     title:
-      "Aspiring Software Engineer | Specialized in Web Development and UI Design",
+      "Aspiring Software Engineer | Specialized in Web Development & UI Design",
     location: "Cebu City, Philippines",
     email: "tinaecyriljosef@gmail.com",
     phone: "+63-917-193-7051",
