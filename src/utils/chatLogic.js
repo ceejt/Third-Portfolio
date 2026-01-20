@@ -82,7 +82,7 @@ const patterns = {
   location: /\b(location|where|live|based|from)\b/i,
   resume: /\b(resume|cv|curriculum|download|pdf)\b/i,
   goals: /\b(goals|aim|future|plan|aspiration|want|hope)\b/i,
-  afterhours: /\b(hobbies|aferhours|after working|interests|what hobbies)\b/i,
+  afterhours: /\b(hobbies|afterhours|after working|interests|what hobbies)\b/i,
 };
 
 const cache = new Map();
