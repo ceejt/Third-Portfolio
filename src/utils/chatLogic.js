@@ -20,7 +20,7 @@ const responses = {
     count: `Cyril has completed ${portfolioData.projects.length} major projects showcasing his full-stack development skills.`,
   },
 
-  experience: `${portfolioData.about.intro} ${portfolioData.about.experience}`,
+  experience: `CJ is a CS student passionate about web development, with hands-on experience in React, Tailwind CSS, and full-stack projects.`,
 
   education: `Cyril is a sophomore BS Computer Science student in UP with intermediate skills in C/C++ and beginner web development knowledge.`,
 
