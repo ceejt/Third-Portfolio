@@ -15,7 +15,7 @@ const responses = {
   },
 
   projects: {
-    general: `Cyril has worked on: ${portfolioData.projects.map((p) => p.title).join(", ")}. Want details about a specific one?`,
+    general: `Cyril has worked on: ${portfolioData.projects.map((p) => p.title).join(", ")}.`,
     portfolio: `This portfolio website! Built with React, Tailwind CSS, featuring dark mode, responsive design, and an AI chatbot (that's me! 🤖).`,
     count: `Cyril has completed ${portfolioData.projects.length} major projects showcasing his full-stack development skills.`,
   },
