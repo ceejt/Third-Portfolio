@@ -29,17 +29,17 @@ const Certifications = () => {
             href={cert.url}
             target="_blank"
             rel="noopener noreferrer"
-            className = "block"
+            className="block"
           >
-          <div
-            key={index}
-            className="border border-border rounded-lg p-4 hover-lift"
-          >
-            <h3 className="font-semibold mb-1">{cert.title}</h3>
-            <p className="text-h4 text-gray-600 dark:text-gray-400">
-              {cert.subtitle}
-            </p>
-          </div>
+            <div
+              key={index}
+              className="border border-border rounded-lg p-4 hover-lift"
+            >
+              <h3 className="font-semibold mb-1">{cert.title}</h3>
+              <p className="text-h4 text-gray-600 dark:text-gray-400">
+                {cert.subtitle}
+              </p>
+            </div>
           </a>
         ))}
       </div>

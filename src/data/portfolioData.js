@@ -40,16 +40,16 @@ export const portfolioData = {
     {
       title: "Hire me!",
       description: "Actively seeking for employment",
-      year: "2025",
-    },
-    {
-      title: "The Odin Project",
-      description: "Completed Foundations course",
-      year: "2025",
+      year: "2026",
     },
     {
       title: "CMSC 130 Project Showcase",
       description: "3rd Place",
+      year: "2025",
+    },
+    {
+      title: "The Odin Project",
+      description: "Completed HTML and CSS Course",
       year: "2025",
     },
     {
@@ -88,10 +88,14 @@ export const portfolioData = {
   certifications: [
     {
       title: "The Odin Project",
-      subtitle: "Foundations Course",
-      url: "https://ceejt.github.io/odin-calculator",
+      subtitle: "Advanced HTML and CSS",
+      url: "https://ceejt-portfolio.netlify.app/",
     },
-    { title: "The Odin Project", subtitle: "Intermediate HTML and CSS" },
+    {
+      title: "The Odin Project",
+      subtitle: "Intermediate HTML and CSS",
+      url: "https://ceejt.github.io/odin-dashboard/",
+    },
     { title: "freeCodeCamp", subtitle: "Front End Development Libraries" },
   ],
 
