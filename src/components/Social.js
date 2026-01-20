@@ -45,7 +45,7 @@ const Social = () => {
         <h2>Social</h2>
       </div>
 
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-col md:flex-row flex-wrap gap-4">
         {socialLinks.map((link, index) => (
           <a
             key={index}
