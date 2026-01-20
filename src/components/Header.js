@@ -16,12 +16,14 @@ const Header = () => {
     <header className="animate-fade-in">
       <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
         <div className="flex-shrink-0">
-          <img
-            src={profile.profileImage}
-            alt={profile.name}
-            className="w-40 h-40 rounded-lg object-cover object-top border-2 border-border"
-            loading="eager"
-          />
+          <div className="w-40 h-40 rounded-lg overflow-hidden">
+            <img
+              src={profile.profileImage}
+              alt={profile.name}
+              className="w-full h-full object-cover scale-125 origin-top transition-transform duration-500"
+              loading="eager"
+            />
+          </div>
         </div>
 
         <div className="flex-1">
