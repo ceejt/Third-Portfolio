@@ -41,6 +41,8 @@ const responses = {
     ? `Cyril's goals include: ${portfolioData.goals.join(", ")}`
     : "Cyril is focused on continuous learning and building impactful projects!",
 
+  afterhours: `CJ's hobbies include ${portfolioData.afterhours.map((h) => h.title).join(", ")}.`,
+
   default: [
     "I'm not quite sure about that! Try asking about:\n• Skills & technologies\n• Projects & work\n• Experience & education\n• Contact information",
     "Hmm, I don't have that info. I can tell you about Cyril's skills, projects, background, or how to reach him!",
@@ -54,7 +56,7 @@ const patterns = {
     /\b(hi|hello|hey|greetings|good morning|good afternoon|good evening|sup|yo)\b/i,
   skills: {
     general:
-      /\b(skill|technology|tech stack|programming|what.*know|can.*do|technologies)\b/i,
+      /\b(skill|skills|technology|technologies|tech stack|programming|what.*know|can.*do|technologies)\b/i,
     frontend:
       /\b(frontend|front-end|react|html|css|javascript|tailwind|ui|ux)\b/i,
     backend: /\b(backend|back-end|server|node|python|database|api)\b/i,
@@ -78,7 +80,8 @@ const patterns = {
   languages: /\b(language|speak|bilingual|fluent|filipino|english)\b/i,
   location: /\b(location|where|live|based|from)\b/i,
   resume: /\b(resume|cv|curriculum|download|pdf)\b/i,
-  goals: /\b(goal|aim|future|plan|aspiration|want|hope)\b/i,
+  goals: /\b(goals|aim|future|plan|aspiration|want|hope)\b/i,
+  afterhours: /\b(hobbies|aferhours|after working|interests|what hobbies)\b/i,
 };
 
 const cache = new Map();
