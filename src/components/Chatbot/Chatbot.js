@@ -129,9 +129,9 @@ const Chatbot = () => {
       <div className="fixed bottom-6 right-6 z-40">
         {!isOpen && (
           <div className="absolute bottom-16 right-0 mb-2 animate-bounce">
-            <span class="absolute -top-1 -right-1 flex size-3">
-              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 opacity-75"></span>
-              <span class="relative inline-flex size-3 rounded-full bg-green-500"></span>
+            <span className="absolute -top-1 -right-1 flex size-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 opacity-75"></span>
+              <span className="relative inline-flex size-3 rounded-full bg-green-500"></span>
             </span>
             <div className="bg-secondary dark:bg-primary text-white dark:text-secondary px-4 py-2 rounded-lg shadow-lg whitespace-nowrap text-sm font-medium">
               Ask TinAI!
