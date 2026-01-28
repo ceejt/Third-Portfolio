@@ -101,7 +101,6 @@ export const portfolioData = {
       subtitle: "Foundations Course",
       url: "https://ceejt.github.io/odin-calculator/",
     },
-    { title: "freeCodeCamp", subtitle: "Front End Development Libraries" },
   ],
 
   projects: [
