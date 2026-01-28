@@ -106,27 +106,27 @@ export const portfolioData = {
 
   projects: [
     {
-      title: "BudgetWise",
-      description: "All-in-one financial management platform for students",
-      url: "Under renovation :(",
+      title: "Ligtasyon Landing Page",
+      description: "Applied sleek and intuitive UI in React + Vite",
+      url: "ligtasyon-landing.netlify.app",
       type: "Web App",
     },
     {
       title: "BudgetWise Landing Page",
-      description: "Dynamic landing page",
+      description: "Dynamic, animated landing page in vanilla HTML/CSS/JS",
       url: "budgetwise-mvp.vercel.app",
       type: "Website",
     },
     {
-      title: "Snippit",
-      description: "Smart short-form clipping tool",
-      url: "Under construction :(",
+      title: "Snippit Landing Page",
+      description: "Animated and intuitive UI in React",
+      url: "snippit-land.netlify.app",
       type: "Web App",
     },
     {
       title: "Design Projects",
       description: "UI and Layout Designs",
-      url: "ceejt-design.netlify.app/",
+      url: "ceejt-design.netlify.app",
       type: "Creative Work",
     },
   ],
