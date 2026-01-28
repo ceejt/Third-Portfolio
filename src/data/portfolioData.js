@@ -124,10 +124,10 @@ export const portfolioData = {
       type: "Web App",
     },
     {
-      title: "Figma Designs",
-      description: "UI Designs",
-      url: "Coming soon!",
-      type: "UI Designs",
+      title: "Design Projects",
+      description: "UI and Layout Designs",
+      url: "ceejt-design.netlify.app/",
+      type: "Creative Work",
     },
   ],
 
