@@ -144,7 +144,7 @@ export const portfolioData = {
     {
       title: "Sports",
       description:
-        "Following basketball and other sports. Go Spurs Go, Wemby my GOAT!",
+        "Following basketball and other sports. Go Spurs Go, Wemby GOAT!",
     },
     {
       title: "Writing",
