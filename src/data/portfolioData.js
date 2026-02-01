@@ -26,7 +26,15 @@ export const portfolioData = {
 
   techStack: {
     frontend: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "C#"],
-    backend: ["Node.js", "Python", "SQL", "Express", "Supabase", "C", "C++"],
+    backend: [
+      "PostgreSQL",
+      "Node.js",
+      "Python",
+      "Express",
+      "Supabase",
+      "C",
+      "C++",
+    ],
     tools: ["Git", "VS Code", "Figma"],
     languages: [
       { name: "English", level: "Fluent" },
@@ -105,18 +113,19 @@ export const portfolioData = {
 
   projects: [
     {
-      title: "Ligtasyon Landing Page",
-      description: "Applied sleek and intuitive UI in React + Vite",
-      url: "ligtasyon-landing.netlify.app",
-      type: "Web App",
-    },
-    {
       title: "BudgetWise",
       description:
         "Full-stack financial management app for students in Next.js",
       url: "budgetwise-mvp.netlify.app",
       type: "Website",
     },
+    {
+      title: "Ligtasyon Landing Page",
+      description: "Applied sleek and intuitive UI in React + Vite",
+      url: "ligtasyon-landing.netlify.app",
+      type: "Web App",
+    },
+
     {
       title: "Snippit Landing Page",
       description: "Animated and intuitive UI in React",
