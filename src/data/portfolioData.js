@@ -111,9 +111,10 @@ export const portfolioData = {
       type: "Web App",
     },
     {
-      title: "BudgetWise Landing Page",
-      description: "Dynamic, animated landing page in vanilla HTML/CSS/JS",
-      url: "budgetwise-mvp.vercel.app",
+      title: "BudgetWise",
+      description:
+        "Full-stack financial management app for students in Next.js",
+      url: "budgetwise-mvp.netlify.app",
       type: "Website",
     },
     {
