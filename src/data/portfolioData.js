@@ -95,6 +95,11 @@ export const portfolioData = {
 
   certifications: [
     {
+      title: "Datacamp",
+      subtitle: "Intermediate SQL",
+      url: "https://www.datacamp.com/completed/statement-of-accomplishment/course/a38c9c42838ce8921a967c1a9dd1ff29935463a3",
+    },
+    {
       title: "The Odin Project",
       subtitle: "Advanced HTML and CSS",
       url: "https://ceejt-portfolio.netlify.app/",
