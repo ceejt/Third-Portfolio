@@ -96,6 +96,16 @@ export const portfolioData = {
   certifications: [
     {
       title: "Datacamp",
+      subtitle: "Working with OpenAI API",
+      url: "https://www.datacamp.com/completed/statement-of-accomplishment/course/f9a468b330ed435478f339344dceeda1b4236d05",
+    },
+    {
+      title: "Datacamp",
+      subtitle: "Introduction to Python",
+      url: "https://www.datacamp.com/completed/statement-of-accomplishment/course/4a64f3d4d80fd5d597c0f921dd3d5fd2fe806958",
+    },
+    {
+      title: "Datacamp",
       subtitle: "Intermediate SQL",
       url: "https://www.datacamp.com/completed/statement-of-accomplishment/course/a38c9c42838ce8921a967c1a9dd1ff29935463a3",
     },
