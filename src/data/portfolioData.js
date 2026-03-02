@@ -188,6 +188,7 @@ export const portfolioData = {
     github: "https://github.com/ceejt",
     instagram: "https://instagram.com/cyriljosef",
     facebook: "https://facebook.com/cyriljosef.tinae",
+    fiverr: "http://www.fiverr.com/s/VYEPPVl",
   },
 
   gallery: [
