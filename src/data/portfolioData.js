@@ -150,7 +150,7 @@ export const portfolioData = {
     {
       title: "Design Projects",
       description: "UI and Layout Designs",
-      url: "ceejt-design.netlify.app",
+      url: "ceejt-design.vercel.app",
       type: "Creative Work",
     },
   ],
