@@ -25,7 +25,16 @@ export const portfolioData = {
   },
 
   techStack: {
-    frontend: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "C#"],
+    frontend: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Tailwind CSS",
+      "C#",
+      "Vue",
+      "PHP",
+    ],
     backend: [
       "PostgreSQL",
       "Node.js",
