@@ -140,20 +140,20 @@ export const portfolioData = {
       title: "BudgetWise",
       description:
         "Full-stack financial management app for students in Next.js",
-      url: "budgetwise-mvp.netlify.app",
+      url: "budgetwise-lvm.vercel.app",
       type: "Website",
     },
     {
       title: "Ligtasyon Landing Page",
       description: "Applied sleek and intuitive UI in React + Vite",
-      url: "ligtasyon-landing.netlify.app",
+      url: "ligtasyon-landing.vercel.app",
       type: "Web App",
     },
 
     {
       title: "Snippit Landing Page",
       description: "Animated and intuitive UI in React",
-      url: "snippit-land.netlify.app",
+      url: "snippit-landing.vercel.app",
       type: "Web App",
     },
     {
