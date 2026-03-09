@@ -34,6 +34,7 @@ export const portfolioData = {
       "C#",
       "Vue",
       "PHP",
+      "Typescript",
     ],
     backend: [
       "PostgreSQL",
