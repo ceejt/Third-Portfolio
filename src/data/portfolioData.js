@@ -21,7 +21,7 @@ export const portfolioData = {
     experience:
       "I am currently a sophomore Computer Science student at University of the Philippines, with experience in online programming courses and certifications, and a long-standing passion for technology developed since high school, including success in a pitching competition.",
     current:
-      "At present, I am sharpening my web development and design skills through hands-on projects such as BudgetWise, daily Figma, Leetcode, and DataCamp practices, as I actively preparing to secure a project-based web development role within the month.",
+      "At present, I am sharpening my web development and design skills through hands-on projects such as BudgetWise, daily Figma, Leetcode, and DataCamp practices.",
   },
 
   techStack: {
