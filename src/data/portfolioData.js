@@ -17,7 +17,7 @@ export const portfolioData = {
 
   about: {
     intro:
-      "I am an aspiring web developer and UI designer with a strong foundation in computer science, known for being adaptable, fast-learning, and creative, with a balanced sense of humor that informs my approach to problem-solving and design.",
+      "I am an aspiring web developer and UI designer with a strong foundation in computer science, known for being adaptable, fast-learning, and creative, contributing to my approach to problem-solving and design.",
     experience:
       "I am currently a sophomore Computer Science student at University of the Philippines, with experience in online programming courses and certifications, and a long-standing passion for technology developed since high school, including success in a pitching competition.",
     current:
