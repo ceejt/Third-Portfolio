@@ -179,7 +179,7 @@ export const portfolioData = {
     {
       title: "Sports",
       description:
-        "Following basketball and other sports. Go Spurs Go, Wemby GOAT!",
+        "Following basketball and other sports. (P.S. I got Spurs winning it all this year, if not, next year!)",
     },
     {
       title: "Writing",
