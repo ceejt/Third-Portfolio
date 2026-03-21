@@ -6,8 +6,7 @@ export const portfolioData = {
   profile: {
     name: "Cyril Josef A. Tinae",
     nickname: "CJ",
-    title:
-      "Fullstack Web Developer",
+    title: "Fullstack Web Developer",
     location: "Cebu City, Philippines",
     email: "tinaecyriljosef@gmail.com",
     phone: "+63-917-193-7051",
@@ -21,7 +20,7 @@ export const portfolioData = {
     experience:
       "I am currently a sophomore Computer Science student at University of the Philippines, with experience in online programming courses and certifications, and a long-standing passion for technology developed since high school, including success in a pitching competition.",
     current:
-      "At present, I am sharpening my web development and design skills through hands-on projects such as BudgetWise, daily Figma, Leetcode, and DataCamp practices.",
+      "At present, I am sharpening my web development and design skills through hands-on projects such as BudgetWise, daily Datacamp, Leetcode, and Figma practices.",
   },
 
   techStack: {
