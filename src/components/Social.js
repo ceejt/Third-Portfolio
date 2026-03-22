@@ -35,6 +35,18 @@ const Social = () => {
       url: social.fiverr,
       icon: "M13.427 13.148v-5h-5v-.312c0-.517.42-.938.938-.938h.937V5.023h-.937a2.816 2.816 0 0 0-2.813 2.813v.312h-1.25v1.875h1.25v3.125h-1.25v1.875h4.375v-1.875h-1.25v-3.125h3.143v3.125h-1.268v1.875h4.375v-1.875h-1.25z M12.402 4.97a1.001 1.001 0 1 0 0 2.002 1.001 1.001 0 0 0 0-2.002z M4 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4zm0-2h12a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z",
     },
+    {
+      name: "Onlinejobs.ph",
+      url: social.onlinejobs,
+      icon: (
+        <img
+          src="/assets/icons/ojph.svg"
+          width={24}
+          height={24}
+          alt="Onlinejobs.ph"
+        />
+      ),
+    },
   ];
 
   return (
@@ -59,9 +71,13 @@ const Social = () => {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 border border-border rounded-md hover-lift"
           >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d={link.icon} />
-            </svg>
+            {typeof link.icon === "string" ? (
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d={link.icon} />
+              </svg>
+            ) : (
+              link.icon
+            )}
             <span className="text-h3">{link.name}</span>
           </a>
         ))}

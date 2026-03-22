@@ -198,6 +198,7 @@ export const portfolioData = {
     instagram: "https://instagram.com/cyriljosef",
     facebook: "https://facebook.com/cyriljosef.tinae",
     fiverr: "http://www.fiverr.com/s/VYEPPVl",
+    onlinejobs: "https://www.onlinejobs.ph/jobseekers/info/4236840",
   },
 
   gallery: [
