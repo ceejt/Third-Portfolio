@@ -6,7 +6,7 @@ export const portfolioData = {
   profile: {
     name: "Cyril Josef A. Tinae",
     nickname: "CJ",
-    title: "Fullstack Web Developer",
+    title: "Fullstack Web Developer | Software Engineer",
     location: "Cebu City, Philippines",
     email: "tinaecyriljosef@gmail.com",
     phone: "+63-917-193-7051",
