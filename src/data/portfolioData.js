@@ -139,7 +139,7 @@ export const portfolioData = {
     {
       title: "BudgetWise",
       description:
-        "Full-stack financial management app for students in Next.js",
+        "Fullstack financial management app for students in Next.js",
       url: "budgetwise-lvm.vercel.app",
       type: "Website",
     },
