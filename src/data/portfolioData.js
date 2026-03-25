@@ -6,7 +6,7 @@ export const portfolioData = {
   profile: {
     name: "Cyril Josef A. Tinae",
     nickname: "CJ",
-    title: "Fullstack Web Developer | Software Engineer",
+    title: "Fullstack Web Developer & Designer | Software Engineer",
     location: "Cebu City, Philippines",
     email: "tinaecyriljosef@gmail.com",
     phone: "+63-917-193-7051",
@@ -138,8 +138,7 @@ export const portfolioData = {
   projects: [
     {
       title: "BudgetWise",
-      description:
-        "Fullstack financial management app for students in Next.js",
+      description: "Fullstack financial management app for students in Next.js",
       url: "budgetwise-lvm.vercel.app",
       type: "Website",
     },
