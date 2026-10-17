@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import TechStack from "./components/TechStack";
 import Leadership from "./components/Leadership";
 import Certifications from "./components/Certifications";
@@ -31,6 +32,7 @@ function App() {
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 space-y-8">
             <About />
+            <Experience />
 
             <div className="lg:hidden">
               <Leadership />

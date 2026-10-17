@@ -57,6 +57,36 @@ const TechStack = () => {
           </div>
         </div>
 
+        {/* AI */}
+        <div>
+          <h3 className="font-semibold mb-3">AI</h3>
+          <div className="flex flex-wrap gap-2">
+            {techStack.ai.map((tech, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 bg-light-bg dark:bg-dark-bg border border-border rounded-md text-h4 hover-lift"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* AI Tools */}
+        <div>
+          <h3 className="font-semibold mb-3">AI Tools</h3>
+          <div className="flex flex-wrap gap-2">
+            {techStack.aiTools.map((tool, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 bg-light-bg dark:bg-dark-bg border border-border rounded-md text-h4 hover-lift"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+
         {/* Tools */}
         <div>
           <h3 className="font-semibold mb-3">Tools</h3>

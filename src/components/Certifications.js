@@ -22,7 +22,7 @@ const Certifications = () => {
         <h2>Recent Certifications & Courses</h2>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
         {certifications.map((cert, index) => (
           <a
             key={index}

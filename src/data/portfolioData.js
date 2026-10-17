@@ -6,22 +6,50 @@ export const portfolioData = {
   profile: {
     name: "Cyril Josef A. Tinae",
     nickname: "CJ",
-    title: "Fullstack Web Developer & Designer | Software Engineer",
+    title: "Fullstack Developer & Designer | AI Integration",
     location: "Cebu City, Philippines",
     email: "tinaecyriljosef@gmail.com",
     phone: "+63-917-193-7051",
-    resumeUrl: assetPath("/assets/Cyril-Josef-Tinae_CV1.pdf"),
+    resumeUrl: assetPath("/assets/cj-tinae-2.pdf"),
     profileImage: assetPath("/assets/images/profile.jpg"),
   },
 
   about: {
     intro:
-      "I am a web developer and UI designer with a strong foundation in computer science, known for being adaptable, fast-learning, and creative, contributing to my approach to problem-solving and design.",
+      "I am a fullstack developer and designer who builds web products and adds AI features to them. I study Computer Science at the University of the Philippines Cebu (Cum Laude standing, expected July 2028).",
     experience:
-      "I am currently a sophomore Computer Science student at University of the Philippines, with experience in online programming courses and certifications, and a long-standing passion for technology developed since high school, including success in a pitching competition.",
+      "In 2026, I worked as a fullstack developer at InstaCode, where I built Vue.js features, an AI coach chat widget, and an MCP server integration. At XGrowth, I manage a real estate website end to end: I design in Figma, build on Snapps (Duda), and handle the technical side, including the PHP and MySQL listing backend, MLS integration, and DNS and server issues.",
     current:
-      "At present, I am sharpening my web development and design skills through hands-on projects such as BudgetWise, daily Datacamp, Leetcode, and Figma practices.",
+      "Right now, I am building personal projects like BudgetWise and FinFlow, and I am looking for a full-time fullstack or AI integration role.",
   },
+
+  experience: [
+    {
+      company: "InstaCode",
+      role: "Fullstack Developer",
+      type: "Full-time, Remote",
+      period: "Mar 2026 - Aug 2026",
+      highlights: [
+        "Built a notes feature in Vue.js with dynamic filtering, category management, inline editing, and unit tests.",
+        "Built the My Plan feature: active achievement, daily log, action checklist, and full plan view, with shared progress and status logic.",
+        "Developed a Groq-based AI coach chat widget with context-aware prompts, suggested prompt chips, and markdown responses.",
+        "Integrated the InstaCode MCP server so AI agents can query app data, and fixed data-visibility bugs from missing foreign-key links.",
+        "Contributed to a JSON-driven datatype schema engine for validation, test-data generation, and database type mapping.",
+      ],
+    },
+    {
+      company: "XGrowth",
+      role: "Website Manager & Designer",
+      type: "Full-time, Remote",
+      period: "Mar 2026 - Oct 2026",
+      highlights: [
+        "Designed layouts in Figma and built 1440px HTML drafts for 8+ real estate pages on a shared design system.",
+        "Implemented approved designs on the Snapps (Duda) site builder, from draft to live deployment.",
+        "Fixed responsive issues caused by the builder re-applying inline styles, using grid and breakpoint settings.",
+        "Managed a real estate CRM, keeping listings, client records, and workflow updates accurate.",
+      ],
+    },
+  ],
 
   techStack: {
     frontend: [
@@ -30,21 +58,48 @@ export const portfolioData = {
       "JavaScript",
       "React",
       "Tailwind CSS",
-      "C#",
       "Vue",
-      "PHP",
+      "Next.js",
+      "Vite",
       "Typescript",
     ],
     backend: [
+      "PHP",
+      "SQL",
       "PostgreSQL",
       "Node.js",
       "Python",
       "Express",
       "Supabase",
+      "Docker",
       "C",
       "C++",
+      "C#",
     ],
-    tools: ["Git", "VS Code", "Figma"],
+    ai: [
+      "LLM Integration",
+      "Groq API",
+      "Claude API",
+      "MCP",
+      "OpenAI API",
+      "Prompt Engineering",
+      "Embeddings",
+      "Vector Databases",
+      "RAG",
+      "Function Calling",
+      "Hugging Face",
+      "LLMOps",
+    ],
+    aiTools: ["Claude Code", "Codex", "Gemini", "GitHub Copilot"],
+    tools: [
+      "Git",
+      "VS Code",
+      "Figma",
+      "Canva",
+      "Lightroom",
+      "Photoshop",
+      "DaVinci Resolve",
+    ],
     languages: [
       { name: "English", level: "Fluent" },
       { name: "Filipino", level: "Fluent" },
@@ -105,8 +160,43 @@ export const portfolioData = {
   certifications: [
     {
       title: "Datacamp",
-      subtitle: "Working with OpenAI API",
-      url: "https://www.datacamp.com/completed/statement-of-accomplishment/course/f9a468b330ed435478f339344dceeda1b4236d05",
+      subtitle: "Building AI Applications with Pinecone",
+      url: assetPath("/assets/certificates/pinecone.pdf"),
+    },
+    {
+      title: "Datacamp",
+      subtitle: "Introduction to Embeddings with the OpenAI API",
+      url: assetPath("/assets/certificates/embeddings-openai.pdf"),
+    },
+    {
+      title: "Datacamp",
+      subtitle: "Developing AI Systems with the OpenAI API",
+      url: assetPath("/assets/certificates/developing-ai-systems-openai.pdf"),
+    },
+    {
+      title: "Datacamp",
+      subtitle: "LLMOps Concepts",
+      url: assetPath("/assets/certificates/llmops-concepts.pdf"),
+    },
+    {
+      title: "Datacamp",
+      subtitle: "Working with Hugging Face",
+      url: assetPath("/assets/certificates/hugging-face.pdf"),
+    },
+    {
+      title: "Datacamp",
+      subtitle: "Prompt Engineering with the OpenAI API",
+      url: assetPath("/assets/certificates/prompt-engineering-openai.pdf"),
+    },
+    {
+      title: "Datacamp",
+      subtitle: "Software Engineering Principles in Python",
+      url: assetPath("/assets/certificates/software-engineering-python.pdf"),
+    },
+    {
+      title: "Datacamp",
+      subtitle: "Working with the OpenAI API",
+      url: assetPath("/assets/certificates/working-with-openai-api.pdf"),
     },
     {
       title: "Datacamp",
@@ -138,9 +228,17 @@ export const portfolioData = {
   projects: [
     {
       title: "BudgetWise",
-      description: "Fullstack financial management app for students in Next.js",
+      description:
+        "Fullstack finance app in Next.js and Supabase with income and expense tracking, e-wallet integrations, and AI financial tips ",
       url: "budgetwise-lvm.vercel.app",
       type: "Website",
+    },
+    {
+      title: "FinFlow",
+      description:
+        "Local-first financial advisor skill in Python that projects cash flow and answers affordability questions, with a private JSON profile",
+      url: "github.com/ceejt/finflow",
+      type: "Tool",
     },
     {
       title: "Ligtasyon Landing Page",
@@ -164,8 +262,9 @@ export const portfolioData = {
   ],
 
   goals: [
-    "Launch my career as a web developer by securing a role where I can build real products as soon as possible.",
-    "Generate my own income early this year by applying my skills in practical, client- or product-driven work.",
+    "Join a team as a fullstack or AI integration developer, where I can ship real product features.",
+    "Keep building AI-powered tools, such as chat assistants and MCP integrations, and grow toward an AI engineering role.",
+    "I am currently studying and working towards earning my first AWS cloud certification",
   ],
 
   afterhours: [

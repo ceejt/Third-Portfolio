@@ -8,7 +8,8 @@ const responses = {
   ],
 
   skills: {
-    general: `Cyril's tech stack includes:\n🎨 Frontend: ${portfolioData.techStack.frontend.join(", ")}\n⚙️ Backend: ${portfolioData.techStack.backend.join(", ")}\n🛠️ Tools: ${portfolioData.techStack.tools.join(", ")}`,
+    general: `Cyril's tech stack includes:\n🎨 Frontend: ${portfolioData.techStack.frontend.join(", ")}\n⚙️ Backend: ${portfolioData.techStack.backend.join(", ")}\n🧠 AI: ${portfolioData.techStack.ai.join(", ")}\n🛠️ Tools: ${portfolioData.techStack.tools.join(", ")}`,
+    ai: `Cyril builds AI features: ${portfolioData.techStack.ai.join(", ")}. He uses ${portfolioData.techStack.aiTools.join(", ")} in his workflow.`,
     frontend: `For frontend development, Cyril uses ${portfolioData.techStack.frontend.join(", ")}. He's particularly skilled in React and Tailwind CSS!`,
     backend: `On the backend, Cyril works with ${portfolioData.techStack.backend.join(", ")}.`,
     tools: `Cyril's development tools include ${portfolioData.techStack.tools.join(", ")}.`,
@@ -17,12 +18,12 @@ const responses = {
   projects: {
     general: `Cyril has worked on: ${portfolioData.projects.map((p) => p.title).join(", ")}.`,
     portfolio: `This portfolio website! Built with React, Tailwind CSS, featuring dark mode, responsive design, and an AI chatbot (that's me! 🤖).`,
-    count: `Cyril has completed ${portfolioData.projects.length} major projects showcasing his full-stack development skills.`,
+    count: `Cyril has ${portfolioData.projects.length} projects listed here, including BudgetWise and FinFlow.`,
   },
 
-  experience: `CJ is a CS student passionate about web development, with hands-on experience in React, Tailwind CSS, and full-stack projects.`,
+  experience: `CJ is a fullstack developer and designer with AI integration experience. Work so far: ${portfolioData.experience.map((job) => `${job.company} (${job.role}, ${job.period})`).join("; ")}. Ask about his projects or skills for more.`,
 
-  education: `Cyril is a sophomore BS Computer Science student in UP with intermediate skills in C/C++ and beginner web development knowledge.`,
+  education: `Cyril is a BS Computer Science student at the University of the Philippines Cebu, with Cum Laude standing and an expected graduation of July 2028.`,
 
   contact: {
     general: `📧 Email: ${portfolioData.profile.email}\n📱 Phone: ${portfolioData.profile.phone}\n📍 Location: ${portfolioData.profile.location}`,
@@ -38,7 +39,7 @@ const responses = {
   resume: `You can view and download Cyril's resume by clicking the "View Resume" button at the top of the page!`,
 
   goals: portfolioData.goals
-    ? `Cyril's goals include: ${portfolioData.goals.join(", ")}`
+    ? `In Cyril's words: ${portfolioData.goals.join(" ")}`
     : "Cyril is focused on continuous learning and building impactful projects!",
 
   afterhours: `CJ's hobbies include ${portfolioData.afterhours.map((h) => h.title).join(", ")}.`,
@@ -55,6 +56,7 @@ const patterns = {
   greetings:
     /\b(hi|hello|hey|greetings|good morning|good afternoon|good evening|sup|yo)\b/i,
   skills: {
+    ai: /\b(ai|llm|mcp|rag|openai|claude|groq|embeddings?|prompt|prompting)\b/i,
     general:
       /\b(skill|skills|technology|technologies|tech stack|programming|what.*know|can.*do|technologies)\b/i,
     frontend:
@@ -68,8 +70,9 @@ const patterns = {
     portfolio: /\b(this site|this website|this portfolio|portfolio site)\b/i,
     count: /\b(how many|number of)\b/i,
   },
+  jobs: /\b(experience|job|jobs|employment|career|instacode|xgrowth|work history|where.*work|work(ed)? (at|for))\b/i,
   experience:
-    /\b(experience|background|about|who|bio|story|journey|tell me about)\b/i,
+    /\b(background|about|who|bio|story|journey|tell me about)\b/i,
   education:
     /\b(education|study|school|university|degree|student|college|learning)\b/i,
   contact: {
@@ -115,6 +118,7 @@ const matchResponse = (message) => {
   }
 
   // skills
+  if (patterns.skills.ai.test(lowerMessage)) return responses.skills.ai;
   if (patterns.skills.frontend.test(lowerMessage))
     return responses.skills.frontend;
   if (patterns.skills.backend.test(lowerMessage))
@@ -122,6 +126,9 @@ const matchResponse = (message) => {
   if (patterns.skills.tools.test(lowerMessage)) return responses.skills.tools;
   if (patterns.skills.general.test(lowerMessage))
     return responses.skills.general;
+
+  // work history
+  if (patterns.jobs.test(lowerMessage)) return responses.experience;
 
   // projects
   if (patterns.projects.portfolio.test(lowerMessage))

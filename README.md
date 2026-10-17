@@ -1,41 +1,34 @@
 # ceejt's Portfolio Website
 
-This is my personal portfolio website built using HTML, Tailwind, and React. This showcases my work as an aspiring **Web Developer and UI Designer**. It highlights my skills, projects, background, and current learning journey in computer science and web development.
+My personal portfolio, built with React and Tailwind CSS. It shows my work as a **fullstack developer and designer** with AI integration experience, plus my projects, skills, and certifications.
 
 ## About me
 
-I am a sophomore Computer Science student with a strong interest in building clean, user-focused web experiences. I am adaptable, quick to learn, and enjoy combining creativity with practical problem-solving.
+I study Computer Science at the University of the Philippines Cebu (Cum Laude standing, expected July 2028). In 2026, I worked as a fullstack developer at InstaCode and as a website manager and designer at XGrowth.
 
 ## Projects
 
-- **BudgetWise** – A student-focused budgeting and financial tracking app
-- **Snippit** – A lightweight web project focused on usability and clean design
-
-More projects are continuously being added as I refine my skills.
+- **BudgetWise**: Fullstack finance app in Next.js and Supabase, with AI financial tips from Claude
+- **FinFlow**: Local-first financial advisor skill in Python that projects cash flow
+- **Ligtasyon Landing Page**: React and Vite landing page for a disaster-readiness platform
+- **Snippit Landing Page**: Animated landing page in React
 
 ## Skills
 
-- Web Development (HTML, CSS, JavaScript)
-- UI/UX Design (Figma)
-- Programming Fundamentals
-- Responsive Design
-- Version Control (Git & GitHub)
+- Frontend: React, Vue, Next.js, Tailwind CSS, TypeScript
+- Backend: Node.js, Python, PHP, SQL, Supabase, Docker
+- AI: LLM integration (Groq, Claude, OpenAI), MCP, embeddings, RAG, prompt engineering
+- Design: Figma, Canva
 
-## Current Focus
+## Run locally
 
-- Polishing web development fundamentals
-- Daily UI design practice using Figma
-- Improving project quality and documentation
-- Preparing for a project-based web development role
+```bash
+npm install
+npm start
+```
 
-## Certifications & Learning
-
-I have completed multiple online courses and certifications in programming and continue to expand my technical skill set through hands-on projects and self-study.
+All site content lives in `src/data/portfolioData.js`.
 
 ## Contact
 
-Feel free to connect with me for collaboration, feedback, or opportunities.
-
----
-
-_This portfolio is a work in progress and will evolve as I grow as a developer and designer._
+Open to full-time fullstack and AI integration roles. Find my links in the Contact section of the site.
