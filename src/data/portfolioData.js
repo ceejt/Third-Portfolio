@@ -46,6 +46,7 @@ export const portfolioData = {
         "Designed layouts in Figma and built 1440px HTML drafts for 8+ real estate pages on a shared design system.",
         "Implemented approved designs on the Snapps (Duda) site builder, from draft to live deployment.",
         "Fixed responsive issues caused by the builder re-applying inline styles, using grid and breakpoint settings.",
+        "Handled backend and server work: the PHP and MySQL MLS listing system, MLS data integration, and DNS and Cloudflare diagnostics.",
         "Managed a real estate CRM, keeping listings, client records, and workflow updates accurate.",
       ],
     },
@@ -201,12 +202,12 @@ export const portfolioData = {
     {
       title: "Datacamp",
       subtitle: "Introduction to Python",
-      url: "https://www.datacamp.com/completed/statement-of-accomplishment/course/4a64f3d4d80fd5d597c0f921dd3d5fd2fe806958",
+      url: assetPath("/assets/certificates/intro-to-python.pdf"),
     },
     {
       title: "Datacamp",
       subtitle: "Intermediate SQL",
-      url: "https://www.datacamp.com/completed/statement-of-accomplishment/course/a38c9c42838ce8921a967c1a9dd1ff29935463a3",
+      url: assetPath("/assets/certificates/intermediate-sql.pdf"),
     },
     {
       title: "The Odin Project",
