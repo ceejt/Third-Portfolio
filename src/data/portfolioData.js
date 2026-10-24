@@ -6,7 +6,7 @@ export const portfolioData = {
   profile: {
     name: "Cyril Josef A. Tinae",
     nickname: "CJ",
-    title: "Fullstack Developer & Designer | AI Integration",
+    title: "Fullstack Developer & Designer | AI Integration | Technical SEO",
     location: "Cebu City, Philippines",
     email: "tinaecyriljosef@gmail.com",
     phone: "+63-917-193-7051",
@@ -18,9 +18,9 @@ export const portfolioData = {
     intro:
       "I am a fullstack developer and designer who builds web products and adds AI features to them. I study Computer Science at the University of the Philippines Cebu (Cum Laude standing, expected July 2028).",
     experience:
-      "In 2026, I worked as a fullstack developer at InstaCode, where I built Vue.js features, an AI coach chat widget, and an MCP server integration. At XGrowth, I manage a real estate website end to end: I design in Figma, build on Snapps (Duda), and handle the technical side, including the PHP and MySQL listing backend, MLS integration, and DNS and server issues.",
+      "In 2026, I worked as a fullstack developer at InstaCode, where I built Vue.js features, an AI coach chat widget, and an MCP server integration. At XGrowth, I manage a real estate website end to end: I design in Figma, build on Snapps, and handle the technical side, including the PHP and MySQL listing backend, MLS integration, and DNS and server issues.",
     current:
-      "Right now, I am building personal projects like BudgetWise and FinFlow, and I am looking for a full-time fullstack or AI integration role.",
+      "Right now, I am building personal projects like FinFlow and SlipStream, and I am looking for a full-time fullstack or AI integration role.",
   },
 
   experience: [
@@ -112,7 +112,7 @@ export const portfolioData = {
   leadership: [
     {
       title: "Hire me!",
-      description: "Actively seeking for employment",
+      description: "Open to fullstack and AI integration roles",
       year: "2026",
     },
     {
@@ -127,7 +127,7 @@ export const portfolioData = {
     },
     {
       title: "BS Computer Science",
-      description: "University of the Philippines - Cebu",
+      description: "University of the Philippines - Cebu, Cum Laude standing",
       year: "2024",
     },
     {
