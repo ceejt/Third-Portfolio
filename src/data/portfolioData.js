@@ -230,6 +230,13 @@ export const portfolioData = {
 
   projects: [
     {
+      title: "SlipStream",
+      description:
+        "Python Formula 1 podium predictor with leak-free features, walk-forward validation on 82 races, and per-race reports with SHAP explanations",
+      url: "slipstream-reports.vercel.app",
+      type: "Data App",
+    },
+    {
       title: "BudgetWise",
       description:
         "Fullstack finance app in Next.js and Supabase with income and expense tracking, e-wallet integrations, and AI financial tips ",

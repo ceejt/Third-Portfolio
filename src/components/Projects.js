@@ -2,6 +2,69 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { portfolioData } from "../data/portfolioData";
 
+const ProjectItem = ({ project }) => {
+  const isLink = project.url && project.url !== "#";
+
+  const tile = (
+    <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-light-card dark:bg-dark-card transition-colors duration-300 group-hover:bg-accent/10">
+      {project.image ? (
+        <img
+          src={project.image}
+          alt=""
+          className="h-full w-full object-cover"
+          loading="lazy"
+        />
+      ) : (
+        <>
+          <span className="absolute bottom-4 left-4 text-h4 text-primary font-fira">
+            {project.url}
+          </span>
+          <span
+            aria-hidden="true"
+            className="absolute right-4 top-4 text-lg text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          >
+            ↗
+          </span>
+        </>
+      )}
+    </div>
+  );
+
+  const caption = (
+    <div className="mt-3">
+      <p className="flex items-center gap-1.5 text-h3 font-medium transition-colors duration-200 group-hover:text-accent">
+        <span>{project.title}</span>
+        <span className="text-primary">/</span>
+        <span className="text-gray-600 dark:text-gray-400">{project.type}</span>
+      </p>
+      <p className="mt-1 text-h4 leading-relaxed text-gray-600 dark:text-gray-400">
+        {project.description}
+      </p>
+    </div>
+  );
+
+  if (!isLink) {
+    return (
+      <div>
+        {tile}
+        {caption}
+      </div>
+    );
+  }
+
+  return (
+    <a
+      href={`https://${project.url}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block rounded-lg"
+    >
+      {tile}
+      {caption}
+    </a>
+  );
+};
+
 const Projects = () => {
   const { projects } = portfolioData;
   const { ref, inView } = useInView({
@@ -13,35 +76,13 @@ const Projects = () => {
     <section
       id="projects"
       ref={ref}
-      className={`card animate-on-scroll ${inView ? "visible" : ""}`}
+      className={`animate-on-scroll ${inView ? "visible" : ""}`}
     >
-      <div className="flex items-center gap-2 mb-6">
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            fillRule="evenodd"
-            d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm1 4a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V9a1 1 0 00-1-1H4zm6 2a1 1 0 011 1v4a1 1 0 11-2 0v-4a1 1 0 011-1z"
-            clipRule="evenodd"
-          />
-        </svg>
-        <h2>Recent Projects</h2>
-      </div>
+      <h2 className="mb-6">Recent Projects</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="border border-border rounded-lg p-4 hover-lift cursor-pointer"
-            onClick={() =>
-              project.url !== "#" &&
-              window.open(`https://${project.url}`, "_blank")
-            }
-          >
-            <h3 className="font-semibold mb-2">{project.title}</h3>
-            <p className="text-h4 text-gray-600 dark:text-gray-400 mb-3">
-              {project.description}
-            </p>
-            <p className="text-h4 text-primary font-fira">{project.url}</p>
-          </div>
+      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2">
+        {projects.map((project) => (
+          <ProjectItem key={project.title} project={project} />
         ))}
       </div>
     </section>
