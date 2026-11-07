@@ -16,6 +16,12 @@ export const portfolioData = {
     profileImage: assetPath("/assets/images/profile.jpg"),
   },
 
+  status: {
+    currently: "Studying Computer Science at UP Cebu and building SlipStream and FinFlow.",
+    previously:
+      "Fullstack developer at InstaCode, website manager and designer at XGrowth.",
+  },
+
   about: {
     intro:
       "I am a fullstack developer and designer who builds web products and adds AI features to them. I study Computer Science at the University of the Philippines Cebu (Cum Laude standing, expected July 2028).",

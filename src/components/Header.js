@@ -2,7 +2,7 @@ import React from "react";
 import { portfolioData } from "../data/portfolioData";
 
 const Header = () => {
-  const { profile } = portfolioData;
+  const { profile, status } = portfolioData;
 
   const handleViewResume = () => {
     window.open(profile.resumeUrl, "_blank");
@@ -93,6 +93,32 @@ const Header = () => {
           </div>
         </div>
       </div>
+
+      <dl
+        className="blur-in mt-10 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10"
+        style={{ "--delay": "0.3s" }}
+      >
+        <div>
+          <dt className="text-[15px] text-gray-600 dark:text-gray-400">
+            Currently
+          </dt>
+          <dd className="mt-1 text-[15px] leading-snug">{status.currently}</dd>
+        </div>
+        <div>
+          <dt className="text-[15px] text-gray-600 dark:text-gray-400">
+            Previously
+          </dt>
+          <dd className="mt-1 text-[15px] leading-snug">
+            {status.previously}{" "}
+            <a
+              href="#experience"
+              className="underline underline-offset-2 transition-colors duration-200 hover:text-accent"
+            >
+              See experience
+            </a>
+          </dd>
+        </div>
+      </dl>
     </header>
   );
 };
