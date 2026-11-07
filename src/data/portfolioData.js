@@ -27,7 +27,7 @@ export const portfolioData = {
     intro:
       "I like building things that work from end to end: the interface, the data behind it, and the checks that show it works.",
     approach:
-      "I use Claude Code every day, and I still check the output. My SlipStream predictor, for example, says plainly that it has not yet beaten a simple grid-order baseline.",
+      "I use Claude Code every day, and I still check the output. My SlipStream predictor, for example, publishes its scores next to a simple grid-order baseline, including when it falls short.",
     next: "I am working toward my first AWS certification, and I am looking for a full-time fullstack or AI integration role.",
   },
 
@@ -238,8 +238,9 @@ export const portfolioData = {
     {
       title: "SlipStream",
       description:
-        "Python Formula 1 podium predictor with leak-free features, walk-forward validation on 82 races, and per-race reports with SHAP explanations",
+        "Python Formula 1 podium predictor with leak-free features, walk-forward validation across 80+ races, and per-race reports with SHAP explanations",
       url: "slipstream-reports.vercel.app",
+      image: assetPath("/assets/images/projects/slipstream.jpg"),
       type: "Data App",
     },
     {
@@ -247,6 +248,7 @@ export const portfolioData = {
       description:
         "Fullstack finance app in Next.js and Supabase with income and expense tracking, e-wallet integrations, and AI financial tips ",
       url: "budgetwise-lvm.vercel.app",
+      image: assetPath("/assets/images/projects/budgetwise.jpg"),
       type: "Website",
     },
     {
@@ -254,12 +256,14 @@ export const portfolioData = {
       description:
         "Local-first financial advisor skill in Python that projects cash flow and answers affordability questions, with a private JSON profile",
       url: "github.com/ceejt/finflow",
+      image: assetPath("/assets/images/projects/finflow.jpg"),
       type: "Tool",
     },
     {
       title: "Ligtasyon Landing Page",
       description: "Applied sleek and intuitive UI in React + Vite",
       url: "ligtasyon-landing.vercel.app",
+      image: assetPath("/assets/images/projects/ligtasyon.jpg"),
       type: "Web App",
     },
 
@@ -267,12 +271,14 @@ export const portfolioData = {
       title: "Snippit Landing Page",
       description: "Animated and intuitive UI in React",
       url: "snippit-landing.vercel.app",
+      image: assetPath("/assets/images/projects/snippit.jpg"),
       type: "Web App",
     },
     {
       title: "Design Projects",
       description: "UI and Layout Designs",
       url: "ceejt-design.vercel.app",
+      image: assetPath("/assets/images/projects/design.jpg"),
       type: "Creative Work",
     },
   ],
