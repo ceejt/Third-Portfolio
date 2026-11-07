@@ -26,7 +26,7 @@ const Leadership = () => {
         {leadership.map((item, index) => (
           <div
             key={index}
-            className="border-l-2 border-border pl-4 hover:border-secondary dark:hover:border-primary transition-colors duration-200"
+            className="border-l-2 border-border pl-4 hover:border-accent transition-colors duration-200"
           >
             <div className="flex justify-between items-start mb-1">
               <h3 className="font-semibold">{item.title}</h3>
