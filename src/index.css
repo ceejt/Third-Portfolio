@@ -77,6 +77,72 @@
 }
 
 @layer components {
+  /* Project tile: two corners cut at 45 degrees, like the C in the logo.
+     A maroon wedge fills the top-right cut and widens on hover. */
+  .tile {
+    --c: var(--c0, 22px);
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      var(--cut, 20px) 100%,
+      0 calc(100% - var(--cut, 20px))
+    );
+  }
+
+  /* Smaller cuts for square gallery tiles */
+  .tile-square {
+    --c0: 14px;
+    --c1: 36px;
+    --cut: 12px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .tile img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--c)) 0,
+      100% var(--c),
+      100% 100%,
+      0 100%
+    );
+    transition: clip-path 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .tile::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--c);
+    height: var(--c);
+    background: rgb(var(--accent));
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    transition:
+      width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .group:hover .tile,
+  .group:focus-visible .tile {
+    --c: var(--c1, 56px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tile img,
+    .tile::after {
+      transition: none;
+    }
+  }
+
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
   }

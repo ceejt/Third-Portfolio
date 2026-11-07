@@ -13,13 +13,13 @@ const Leadership = () => {
     <section
       id="leadership"
       ref={ref}
-      className={`animate-on-scroll ${inView ? "visible" : ""} sticky top-8`}
+      className={`animate-on-scroll ${inView ? "visible" : ""}`}
     >
       <div className="flex items-center gap-2 mb-6">
         <h2>Leadership & Achievements</h2>
       </div>
 
-      <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
+      <div className="grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
         {leadership.map((item, index) => (
           <div
             key={index}

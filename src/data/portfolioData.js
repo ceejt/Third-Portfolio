@@ -28,7 +28,7 @@ export const portfolioData = {
       "I like building things that work from end to end: the interface, the data behind it, and the checks that show it works.",
     approach:
       "I use Claude Code every day, and I still check the output. My SlipStream predictor, for example, publishes its scores next to a simple grid-order baseline, including when it falls short.",
-    next: "I am working toward my first AWS certification, and I am looking for a full-time fullstack or AI integration role.",
+    next: "I am looking for a full-time fullstack or AI integration role where I can ship real product features, and I want to keep building AI tools such as chat assistants and MCP integrations. I am also working toward my first AWS certification.",
   },
 
   experience: [
@@ -280,6 +280,18 @@ export const portfolioData = {
       url: "ceejt-design.vercel.app",
       image: assetPath("/assets/images/projects/design.jpg"),
       type: "Creative Work",
+    },
+  ],
+
+  notes: [
+    {
+      slug: "developers-as-architects",
+      title: "Developers as architects and inspectors",
+      date: "",
+      summary:
+        "AI is moving developers from writing code toward designing systems and checking the work. What that changes, and what skill to protect.",
+      status: "soon",
+      body: [],
     },
   ],
 

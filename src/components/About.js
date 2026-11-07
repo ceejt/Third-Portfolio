@@ -19,7 +19,7 @@ const About = () => {
         <h2>About</h2>
       </div>
 
-      <div className="space-y-4 text-p leading-relaxed">
+      <div className="max-w-[54ch] space-y-4 text-p leading-relaxed">
         <p>{about.intro}</p>
         <p>{about.approach}</p>
         <p>{about.next}</p>

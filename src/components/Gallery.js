@@ -19,20 +19,19 @@ const Gallery = ({ onImageClick }) => {
         <h2>Gallery</h2>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {gallery.map((image, index) => (
-          <div
+          <button
             key={index}
-            className="aspect-square overflow-hidden rounded-lg hover-scale cursor-pointer"
+            type="button"
+            className="group block w-full text-left"
+            aria-label={`Open gallery image ${index + 1}`}
             onClick={() => onImageClick(image)}
           >
-            <img
-              src={image}
-              alt={`Gallery ${index + 1}`}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
+            <div className="tile tile-square bg-light-card dark:bg-dark-card">
+              <img src={image} alt="" loading="lazy" />
+            </div>
+          </button>
         ))}
       </div>
     </section>

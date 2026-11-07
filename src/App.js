@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "./components/Header";
 import Rail from "./components/Rail";
+import Notes from "./components/Notes";
+import { useHash } from "./utils/useHash";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import TechStack from "./components/TechStack";
 import Leadership from "./components/Leadership";
 import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
-import Goals from "./components/Goals";
 import Afterhours from "./components/Afterhours";
 import Social from "./components/Social";
 import Contact from "./components/Contact";
@@ -19,6 +20,23 @@ import ImageModal from "./components/Modal/ImageModal";
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const hash = useHash();
+  const onNotes = hash.startsWith("#/notes");
+  const wasOnNotes = useRef(false);
+
+  // Notes open at the top. Leaving Notes for a section link scrolls to it,
+  // because that section did not exist when the browser tried to jump.
+  useEffect(() => {
+    if (onNotes) {
+      window.scrollTo(0, 0);
+    } else if (wasOnNotes.current) {
+      const target =
+        hash.length > 1 ? document.getElementById(hash.slice(1)) : null;
+      if (target) target.scrollIntoView();
+      else window.scrollTo(0, 0);
+    }
+    wasOnNotes.current = onNotes;
+  }, [hash, onNotes]);
 
   return (
     <div className="min-h-screen">
@@ -28,36 +46,29 @@ function App() {
       {/* Main Content */}
       <div id="top" className="section-container">
         <div className="lg:flex lg:gap-10">
-          <Rail />
+          <Rail onNotes={onNotes} />
 
-          <div className="min-w-0 flex-1">
-            <Header />
+          <div className="min-w-0 max-w-4xl flex-1">
+            {onNotes ? (
+              <Notes hash={hash} />
+            ) : (
+              <>
+                <Header />
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-              {/* Left Column - Main Content */}
-              <div className="lg:col-span-2 space-y-16">
-                <About />
-                <Experience />
-
-                <div className="lg:hidden">
+                <div className="mt-24 space-y-24">
+                  <Projects />
+                  <About />
+                  <Experience />
+                  <TechStack />
                   <Leadership />
+                  <Certifications />
+                  <Afterhours />
+                  <Social />
+                  <Contact />
+                  <Gallery onImageClick={setSelectedImage} />
                 </div>
-
-                <TechStack />
-                <Certifications />
-                <Projects />
-                <Goals />
-                <Afterhours />
-                <Social />
-                <Contact />
-                <Gallery onImageClick={setSelectedImage} />
-              </div>
-
-              {/* Right Column - Leadership */}
-              <div className="hidden lg:block lg:col-span-1">
-                <Leadership />
-              </div>
-            </div>
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { portfolioData } from "../data/portfolioData";
 
+// Items with an id scroll to a section. Items with a route open a page.
 const items = [
+  { id: "projects", label: "Projects" },
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "tech-stack", label: "Skills" },
-  { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
+  { route: "#/notes", label: "Notes" },
 ];
 
-const useActiveSection = () => {
+const useActiveSection = (onNotes) => {
   const [active, setActive] = useState("");
 
   useEffect(() => {
+    if (onNotes) {
+      setActive("");
+      return undefined;
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -22,37 +28,38 @@ const useActiveSection = () => {
       { rootMargin: "-30% 0px -60% 0px" },
     );
     items.forEach(({ id }) => {
-      const el = document.getElementById(id);
+      const el = id && document.getElementById(id);
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
-  }, []);
+  }, [onNotes]);
 
   return active;
 };
 
-const NavLinks = ({ active, className }) => (
+const NavLinks = ({ active, onNotes, className }) => (
   <nav aria-label="Sections" className={className}>
-    {items.map(({ id, label }) => (
-      <a
-        key={id}
-        href={`#${id}`}
-        aria-current={active === id ? "location" : undefined}
-        className={`text-[15px] leading-none transition-colors duration-200 hover:text-accent ${
-          active === id
-            ? "text-accent"
-            : "text-gray-600 dark:text-gray-400"
-        }`}
-      >
-        {label}
-      </a>
-    ))}
+    {items.map(({ id, route, label }) => {
+      const isActive = route ? onNotes : active === id;
+      return (
+        <a
+          key={label}
+          href={route || `#${id}`}
+          aria-current={isActive ? (route ? "page" : "location") : undefined}
+          className={`text-[15px] leading-none transition-colors duration-200 hover:text-accent ${
+            isActive ? "text-accent" : "text-gray-600 dark:text-gray-400"
+          }`}
+        >
+          {label}
+        </a>
+      );
+    })}
   </nav>
 );
 
-const Rail = () => {
+const Rail = ({ onNotes = false }) => {
   const { profile } = portfolioData;
-  const active = useActiveSection();
+  const active = useActiveSection(onNotes);
 
   const logo = (
     <a
@@ -73,7 +80,11 @@ const Rail = () => {
       >
         <div className="sticky top-8 pt-2">
           {logo}
-          <NavLinks active={active} className="mt-16 flex flex-col gap-4" />
+          <NavLinks
+            active={active}
+            onNotes={onNotes}
+            className="mt-16 flex flex-col gap-4"
+          />
         </div>
       </aside>
 
@@ -82,6 +93,7 @@ const Rail = () => {
         {logo}
         <NavLinks
           active={active}
+          onNotes={onNotes}
           className="mt-4 flex gap-5 overflow-x-auto pb-1"
         />
       </div>

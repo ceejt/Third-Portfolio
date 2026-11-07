@@ -19,7 +19,7 @@ const Certifications = () => {
         <h2>Recent Certifications & Courses</h2>
       </div>
 
-      <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
+      <div className="grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
         {certifications.map((cert, index) => (
           <a
             key={index}
@@ -28,10 +28,7 @@ const Certifications = () => {
             rel="noopener noreferrer"
             className="block"
           >
-            <div
-              key={index}
-              className="border-b border-border/40 pb-4"
-            >
+            <div className="border-b border-border/40 pb-4">
               <h3 className="font-semibold mb-1">{cert.title}</h3>
               <p className="text-h4 text-gray-600 dark:text-gray-400">
                 {cert.subtitle}
