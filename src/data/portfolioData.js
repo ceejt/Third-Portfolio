@@ -6,6 +6,8 @@ export const portfolioData = {
   profile: {
     name: "Cyril Josef A. Tinae",
     nickname: "CJ",
+    headline:
+      "I'm a fullstack developer who builds web products and the AI features inside them.",
     title: "Fullstack Developer & Designer | AI Integration | Technical SEO",
     location: "Cebu City, Philippines",
     email: "tinaecyriljosef@gmail.com",

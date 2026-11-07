@@ -13,8 +13,15 @@ const Header = () => {
   };
 
   return (
-    <header className="animate-fade-in">
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+    <header>
+      <p className="blur-in max-w-3xl pt-8 pb-12 text-3xl md:text-5xl font-semibold leading-tight tracking-tight">
+        {profile.headline}
+      </p>
+
+      <div
+        className="blur-in flex flex-col md:flex-row items-center md:items-start gap-6"
+        style={{ "--delay": "0.15s" }}
+      >
         <div className="flex-shrink-0">
           <div className="w-40 h-40 rounded-lg overflow-hidden">
             <img
