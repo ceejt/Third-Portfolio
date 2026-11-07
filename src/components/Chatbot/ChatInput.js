@@ -12,20 +12,21 @@ const ChatInput = ({ onSend, isLoading }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 border-t border-border">
+    <form onSubmit={handleSubmit} className="px-5 pb-5 pt-2">
       <div className="flex items-center gap-2">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask me anything..."
-          className="flex-1 px-4 py-2 bg-light-bg dark:bg-dark-bg border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-p"
+          className="flex-1 rounded-full bg-light-card px-4 py-2.5 text-[14px] focus:outline-none focus:ring-2 focus:ring-accent/60 dark:bg-dark-card"
           disabled={isLoading}
         />
         <button
           type="submit"
           disabled={!input.trim() || isLoading}
-          className="p-2 bg-secondary dark:bg-primary text-white dark:text-secondary rounded-lg hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 dark:text-dark-bg"
+          aria-label="Send message"
         >
           <svg
             className="w-5 h-5"

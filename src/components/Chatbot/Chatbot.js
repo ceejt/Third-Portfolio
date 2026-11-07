@@ -70,15 +70,16 @@ const Chatbot = () => {
   return (
     <>
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-96 max-w-[calc(100vw-3rem)] h-[500px] bg-light-card dark:bg-dark-card border border-border rounded-lg shadow-2xl flex flex-col animate-slide-up z-40">
-          <div className="flex items-center justify-between p-4 border-b border-border">
+        <div className="blur-in fixed bottom-24 right-6 z-40 flex h-[500px] w-96 max-w-[calc(100vw-3rem)] flex-col rounded-xl bg-light-bg shadow-2xl ring-1 ring-black/5 dark:bg-dark-bg dark:ring-white/10">
+          <div className="flex items-center justify-between px-5 pb-2 pt-5">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <h3 className="font-semibold">TinAI</h3>
+              <div className="h-2 w-2 rounded-full bg-green-500 motion-safe:animate-pulse"></div>
+              <h3 className="text-[15px] font-medium">TinAI</h3>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
+              className="text-gray-600 transition-colors duration-200 hover:text-accent dark:text-gray-400"
+              aria-label="Close chat"
             >
               <svg
                 className="w-5 h-5"
@@ -96,19 +97,19 @@ const Chatbot = () => {
             </button>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          <div className="flex-1 space-y-5 overflow-y-auto px-5 py-3">
             {messages.map((message, index) => (
               <ChatMessage key={index} message={message} />
             ))}
             {isLoading && (
               <div className="flex items-center gap-2 text-gray-500">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                <div className="h-2 w-2 rounded-full bg-accent animate-pulse"></div>
                 <div
-                  className="w-2 h-2 bg-primary rounded-full animate-pulse"
+                  className="h-2 w-2 rounded-full bg-accent animate-pulse"
                   style={{ animationDelay: "0.2s" }}
                 ></div>
                 <div
-                  className="w-2 h-2 bg-primary rounded-full animate-pulse"
+                  className="h-2 w-2 rounded-full bg-accent animate-pulse"
                   style={{ animationDelay: "0.4s" }}
                 ></div>
               </div>
@@ -117,14 +118,14 @@ const Chatbot = () => {
           </div>
 
           {messages.length === 1 && (
-            <div className="px-4 pb-2 flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 px-5 pb-3">
               {getSuggestions()
                 .slice(0, 3)
                 .map((suggestion, index) => (
                   <button
                     key={index}
                     onClick={() => handleSuggestionClick(suggestion)}
-                    className="text-xs px-3 py-1 bg-light-bg dark:bg-dark-bg border border-border rounded-full hover:bg-primary hover:text-white transition-colors"
+                    className="rounded-full bg-light-card px-3 py-1.5 text-xs transition-colors duration-200 hover:bg-accent hover:text-white dark:bg-dark-card dark:hover:text-dark-bg"
                   >
                     {suggestion}
                   </button>
