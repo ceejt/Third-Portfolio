@@ -28,8 +28,8 @@ const About = () => {
 
       <div className="space-y-4 text-p leading-relaxed">
         <p>{about.intro}</p>
-        <p>{about.experience}</p>
-        <p>{about.current}</p>
+        <p>{about.approach}</p>
+        <p>{about.next}</p>
       </div>
     </section>
   );

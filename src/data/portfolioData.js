@@ -25,11 +25,10 @@ export const portfolioData = {
 
   about: {
     intro:
-      "I am a fullstack developer and designer who builds web products and adds AI features to them. I study Computer Science at the University of the Philippines Cebu (Cum Laude standing, expected July 2028).",
-    experience:
-      "In 2026, I worked as a fullstack developer at InstaCode, where I built Vue.js features, an AI coach chat widget, and an MCP server integration. At XGrowth, I manage a real estate website end to end: I design in Figma, build on Snapps, and handle the technical side, including the PHP and MySQL listing backend, MLS integration, and DNS and server issues.",
-    current:
-      "Right now, I am building personal projects like FinFlow and SlipStream, and I am looking for a full-time fullstack or AI integration role.",
+      "I like building things that work from end to end: the interface, the data behind it, and the checks that show it works.",
+    approach:
+      "I use Claude Code every day, and I still check the output. My SlipStream predictor, for example, says plainly that it has not yet beaten a simple grid-order baseline.",
+    next: "I am working toward my first AWS certification, and I am looking for a full-time fullstack or AI integration role.",
   },
 
   experience: [
