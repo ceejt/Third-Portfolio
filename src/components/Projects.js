@@ -10,7 +10,7 @@ const ProjectItem = ({ project }) => {
       {project.image ? (
         <img src={project.image} alt="" loading="lazy" />
       ) : (
-        <span className="absolute bottom-4 left-4 font-fira text-h4 text-gray-600 dark:text-gray-400">
+        <span className="absolute bottom-4 left-4 font-fira text-h4 text-muted">
           {project.url}
         </span>
       )}
@@ -19,15 +19,15 @@ const ProjectItem = ({ project }) => {
 
   const caption = (
     <div className="mt-3.5">
-      <p className="flex items-baseline justify-between gap-4 text-[15px] font-semibold">
+      <p className="flex items-baseline justify-between gap-4 text-ui font-semibold">
         <span className="transition-colors duration-200 group-hover:text-accent">
           {project.title}
         </span>
-        <span className="whitespace-nowrap text-[13px] font-normal text-gray-600 dark:text-gray-400">
+        <span className="whitespace-nowrap text-h4 font-normal text-muted">
           {project.type}
         </span>
       </p>
-      <p className="mt-1.5 max-w-[46ch] text-[13px] leading-relaxed text-gray-600 dark:text-gray-400">
+      <p className="mt-1.5 max-w-[46ch] text-h4 leading-relaxed text-muted">
         {project.description}
       </p>
     </div>

@@ -7,6 +7,7 @@
 @layer base {
   :root {
     --accent: 142 27 46;
+    --muted: 75 85 99;
     --grain-opacity: 0.22;
     --grain-blend: multiply;
     --grain-size: 240px;
@@ -14,6 +15,7 @@
 
   :root.dark {
     --accent: 224 85 106;
+    --muted: 156 163 175;
     --grain-opacity: 0.1;
     --grain-blend: screen;
   }
@@ -60,10 +62,10 @@
   }
 
   h1 {
-    @apply text-h1 font-semibold;
+    @apply font-display text-h1 font-semibold;
   }
   h2 {
-    @apply text-h2 font-semibold;
+    @apply font-display text-h2 font-semibold;
   }
   h3 {
     @apply text-h3 font-medium;
@@ -73,6 +75,12 @@
   }
   p {
     @apply text-p;
+    text-wrap: pretty;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
   }
 }
 

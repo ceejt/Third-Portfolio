@@ -26,7 +26,7 @@ const Afterhours = () => {
             className="border-t border-border/40 pt-4"
           >
             <h3 className="font-semibold mb-2">{item.title}</h3>
-            <p className="text-h4 text-gray-600 dark:text-gray-400">
+            <p className="text-h4 text-muted">
               {item.description}
             </p>
           </div>

@@ -27,11 +27,11 @@ const Leadership = () => {
           >
             <div className="flex justify-between items-start mb-1">
               <h3 className="font-semibold">{item.title}</h3>
-              <span className="text-h4 text-primary font-fira flex-shrink-0 ml-2">
+              <span className="text-h4 text-muted font-fira flex-shrink-0 ml-2">
                 {item.year}
               </span>
             </div>
-            <p className="text-h4 text-gray-600 dark:text-gray-400">
+            <p className="text-h4 text-muted">
               {item.description}
             </p>
           </div>

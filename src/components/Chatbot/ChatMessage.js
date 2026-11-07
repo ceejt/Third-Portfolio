@@ -12,7 +12,7 @@ const ChatMessage = ({ message }) => {
             : ""
         }`}
       >
-        <p className="whitespace-pre-wrap text-[14px] leading-relaxed">{message.content}</p>
+        <p className="whitespace-pre-wrap text-sm leading-relaxed">{message.content}</p>
       </div>
     </div>
   );

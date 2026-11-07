@@ -74,11 +74,11 @@ const Chatbot = () => {
           <div className="flex items-center justify-between px-5 pb-2 pt-5">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-green-500 motion-safe:animate-pulse"></div>
-              <h3 className="text-[15px] font-medium">TinAI</h3>
+              <h3 className="text-ui font-medium">TinAI</h3>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-gray-600 transition-colors duration-200 hover:text-accent dark:text-gray-400"
+              className="text-muted transition-colors duration-200 hover:text-accent"
               aria-label="Close chat"
             >
               <svg
@@ -102,7 +102,7 @@ const Chatbot = () => {
               <ChatMessage key={index} message={message} />
             ))}
             {isLoading && (
-              <div className="flex items-center gap-2 text-gray-500">
+              <div className="flex items-center gap-2 text-muted">
                 <div className="h-2 w-2 rounded-full bg-accent animate-pulse"></div>
                 <div
                   className="h-2 w-2 rounded-full bg-accent animate-pulse"
@@ -125,7 +125,7 @@ const Chatbot = () => {
                   <button
                     key={index}
                     onClick={() => handleSuggestionClick(suggestion)}
-                    className="rounded-full bg-light-card px-3 py-1.5 text-xs transition-colors duration-200 hover:bg-accent hover:text-white dark:bg-dark-card dark:hover:text-dark-bg"
+                    className="rounded-full bg-light-card px-3 py-1.5 text-h4 transition-colors duration-200 hover:bg-accent hover:text-white dark:bg-dark-card dark:hover:text-dark-bg"
                   >
                     {suggestion}
                   </button>

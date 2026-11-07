@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header>
-      <p className="blur-in max-w-3xl pt-8 pb-12 text-3xl md:text-5xl font-semibold leading-tight tracking-tight">
+      <p className="blur-in max-w-[20ch] text-balance pb-12 pt-8 font-display text-4xl font-semibold leading-[1.08] tracking-[-0.01em] md:text-[3.5rem]">
         {profile.headline}
       </p>
 
@@ -35,16 +35,16 @@ const Header = () => {
 
         <div className="flex-1 text-center md:text-left">
           <div className="flex items-baseline justify-center md:justify-start gap-3 mb-2">
-            <h1 className="text-2xl md:text-3xl font-bold">{profile.name}</h1>
-            <h4 className="text-sm text-primary font-fira">
+            <h1 className="text-2xl md:text-3xl font-semibold">{profile.name}</h1>
+            <span className="text-sm text-muted font-fira">
               ({profile.nickname})
-            </h4>
+            </span>
             {/* <span className="text-2xl md:text-3xl">💻</span> */}
           </div>
 
           <div className="flex items-center justify-center md:justify-start gap-1 mb-2">
             <svg
-              className="w-4 h-4 text-primary flex-shrink-0"
+              className="w-4 h-4 text-muted flex-shrink-0"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -54,7 +54,7 @@ const Header = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <p className="text-sm text-primary font-fira">{profile.location}</p>
+            <p className="text-sm text-muted font-fira">{profile.location}</p>
           </div>
 
           <p className="text-p mb-4">{profile.title}</p>
@@ -99,16 +99,16 @@ const Header = () => {
         style={{ "--delay": "0.3s" }}
       >
         <div>
-          <dt className="text-[15px] text-gray-600 dark:text-gray-400">
+          <dt className="text-ui text-muted">
             Currently
           </dt>
-          <dd className="mt-1 text-[15px] leading-snug">{status.currently}</dd>
+          <dd className="mt-1 text-ui leading-snug">{status.currently}</dd>
         </div>
         <div>
-          <dt className="text-[15px] text-gray-600 dark:text-gray-400">
+          <dt className="text-ui text-muted">
             Previously
           </dt>
-          <dd className="mt-1 text-[15px] leading-snug">
+          <dd className="mt-1 text-ui leading-snug">
             {status.previously}{" "}
             <a
               href="#experience"

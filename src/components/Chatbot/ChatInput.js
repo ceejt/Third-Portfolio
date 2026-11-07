@@ -19,7 +19,7 @@ const ChatInput = ({ onSend, isLoading }) => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask me anything..."
-          className="flex-1 rounded-full bg-light-card px-4 py-2.5 text-[14px] focus:outline-none focus:ring-2 focus:ring-accent/60 dark:bg-dark-card"
+          className="flex-1 rounded-full bg-light-card px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/60 dark:bg-dark-card"
           disabled={isLoading}
         />
         <button

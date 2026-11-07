@@ -46,8 +46,8 @@ const NavLinks = ({ active, onNotes, className }) => (
           key={label}
           href={route || `#${id}`}
           aria-current={isActive ? (route ? "page" : "location") : undefined}
-          className={`text-[15px] leading-none transition-colors duration-200 hover:text-accent ${
-            isActive ? "text-accent" : "text-gray-600 dark:text-gray-400"
+          className={`text-ui leading-none transition-colors duration-200 hover:text-accent ${
+            isActive ? "text-accent" : "text-muted"
           }`}
         >
           {label}

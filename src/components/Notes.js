@@ -8,10 +8,10 @@ const NoteList = () => {
 
   return (
     <div className="blur-in max-w-3xl pb-16">
-      <h1 className="pt-8 text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
+      <h1 className="pt-8 text-3xl font-semibold leading-tight tracking-[-0.01em] md:text-5xl">
         Notes
       </h1>
-      <p className="mt-4 max-w-xl text-[15px] leading-snug text-gray-600 dark:text-gray-400">
+      <p className="mt-4 max-w-xl text-ui leading-snug text-muted">
         Short writing on building software with AI.
       </p>
 
@@ -19,13 +19,13 @@ const NoteList = () => {
         {notes.map((note) => {
           const body = (
             <>
-              <p className="flex items-center gap-2 text-h4 font-fira text-gray-600 dark:text-gray-400">
+              <p className="flex items-center gap-2 text-h4 font-fira text-muted">
                 <span>{isReady(note) ? note.date : "Coming soon"}</span>
               </p>
               <h2 className="mt-2 text-h2 transition-colors duration-200 group-hover:text-accent">
                 {note.title}
               </h2>
-              <p className="mt-1 text-[15px] leading-snug text-gray-600 dark:text-gray-400">
+              <p className="mt-1 text-ui leading-snug text-muted">
                 {note.summary}
               </p>
             </>
@@ -55,7 +55,7 @@ const Note = ({ slug }) => {
   if (!note) {
     return (
       <div className="blur-in max-w-3xl pb-16 pt-8">
-        <p className="text-[15px]">
+        <p className="text-ui">
           That note does not exist.{" "}
           <a href="#/notes" className="underline underline-offset-2 hover:text-accent">
             Back to notes
@@ -69,14 +69,14 @@ const Note = ({ slug }) => {
     <article className="blur-in max-w-2xl pb-16 pt-8">
       <a
         href="#/notes"
-        className="text-[15px] text-gray-600 transition-colors duration-200 hover:text-accent dark:text-gray-400"
+        className="text-ui text-muted transition-colors duration-200 hover:text-accent"
       >
         Notes
       </a>
-      <h1 className="mt-6 text-3xl font-semibold leading-tight tracking-tight md:text-4xl">
+      <h1 className="mt-6 text-3xl font-semibold leading-tight tracking-[-0.01em] md:text-4xl">
         {note.title}
       </h1>
-      <p className="mt-3 text-h4 font-fira text-gray-600 dark:text-gray-400">
+      <p className="mt-3 text-h4 font-fira text-muted">
         {note.date}
       </p>
       <div className="mt-10 space-y-5">
@@ -86,7 +86,7 @@ const Note = ({ slug }) => {
               {block.text}
             </h2>
           ) : (
-            <p key={i} className="text-[15px] leading-relaxed">
+            <p key={i} className="max-w-[54ch] text-p">
               {block.text}
             </p>
           ),

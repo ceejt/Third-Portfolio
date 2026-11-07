@@ -30,7 +30,7 @@ const Certifications = () => {
           >
             <div className="border-b border-border/40 pb-4">
               <h3 className="font-semibold mb-1">{cert.title}</h3>
-              <p className="text-h4 text-gray-600 dark:text-gray-400">
+              <p className="text-h4 text-muted">
                 {cert.subtitle}
               </p>
             </div>

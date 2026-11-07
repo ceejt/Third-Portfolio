@@ -23,15 +23,15 @@ const Experience = () => {
         {experience.map((job, index) => (
           <div
             key={index}
-            className="border-l-2 border-border pl-4 hover:border-accent transition-colors duration-200"
+            className="max-w-[62ch] border-l-2 border-border pl-4 hover:border-accent transition-colors duration-200"
           >
             <div className="flex justify-between items-start mb-1">
               <h3 className="font-semibold">{job.company}</h3>
-              <span className="text-h4 text-primary font-fira flex-shrink-0 ml-2">
+              <span className="text-h4 text-muted font-fira flex-shrink-0 ml-2">
                 {job.period}
               </span>
             </div>
-            <p className="text-h4 text-gray-600 dark:text-gray-400 mb-3">
+            <p className="text-h4 text-muted mb-3">
               {job.role} • {job.type}
             </p>
 
@@ -41,7 +41,7 @@ const Experience = () => {
                   key={i}
                   className="flex items-start gap-3 text-p leading-relaxed"
                 >
-                  <span className="text-primary -mt-0.5">•</span>
+                  <span className="text-muted -mt-0.5">•</span>
                   <span>{highlight}</span>
                 </li>
               ))}

@@ -52,7 +52,7 @@ const Contact = () => {
             className="flex items-center gap-4 py-3 border-b border-border/40 hover:text-accent transition-colors duration-200 cursor-pointer"
           >
             <svg
-              className="w-6 h-6 text-primary flex-shrink-0"
+              className="w-6 h-6 text-muted flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -66,7 +66,7 @@ const Contact = () => {
             </svg>
             <div>
               <p className="text-h3 font-semibold">{info.type}</p>
-              <p className="text-h4 text-gray-600 dark:text-gray-400">
+              <p className="text-h4 text-muted">
                 {info.value}
               </p>
             </div>
