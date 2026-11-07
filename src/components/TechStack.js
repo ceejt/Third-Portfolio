@@ -13,16 +13,9 @@ const TechStack = () => {
     <section
       id="tech-stack"
       ref={ref}
-      className={`card animate-on-scroll ${inView ? "visible" : ""}`}
+      className={`animate-on-scroll ${inView ? "visible" : ""}`}
     >
       <div className="flex items-center gap-2 mb-6">
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            fillRule="evenodd"
-            d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
         <h2>Tech Stack & Skills</h2>
       </div>
 
@@ -34,7 +27,7 @@ const TechStack = () => {
             {techStack.frontend.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-light-bg dark:bg-dark-bg border border-border rounded-md text-h4 hover-lift"
+                className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
               >
                 {tech}
               </span>
@@ -49,7 +42,7 @@ const TechStack = () => {
             {techStack.backend.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-light-bg dark:bg-dark-bg border border-border rounded-md text-h4 hover-lift"
+                className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
               >
                 {tech}
               </span>
@@ -64,7 +57,7 @@ const TechStack = () => {
             {techStack.ai.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-light-bg dark:bg-dark-bg border border-border rounded-md text-h4 hover-lift"
+                className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
               >
                 {tech}
               </span>
@@ -79,7 +72,7 @@ const TechStack = () => {
             {techStack.aiTools.map((tool, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-light-bg dark:bg-dark-bg border border-border rounded-md text-h4 hover-lift"
+                className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
               >
                 {tool}
               </span>
@@ -94,7 +87,7 @@ const TechStack = () => {
             {techStack.tools.map((tool, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-light-bg dark:bg-dark-bg border border-border rounded-md text-h4 hover-lift"
+                className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
               >
                 {tool}
               </span>
@@ -110,7 +103,7 @@ const TechStack = () => {
               <div key={index} className="flex justify-between items-center">
                 <span
                   key={index}
-                  className="px-3 py-1 bg-light-bg dark:bg-dark-bg border border-border rounded-md text-h4 hover-lift"
+                  className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
                 >
                   {lang.name} ({lang.level})
                 </span>

@@ -38,13 +38,9 @@ const Contact = () => {
     <section
       id="contact"
       ref={ref}
-      className={`card animate-on-scroll ${inView ? "visible" : ""}`}
+      className={`animate-on-scroll ${inView ? "visible" : ""}`}
     >
       <div className="flex items-center gap-2 mb-6">
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-        </svg>
         <h2>Contact</h2>
       </div>
 
@@ -53,7 +49,7 @@ const Contact = () => {
           <div
             key={index}
             onClick={info.action}
-            className="flex items-center gap-4 p-4 border border-border rounded-lg hover-lift cursor-pointer"
+            className="flex items-center gap-4 py-3 border-b border-border/40 hover:text-accent transition-colors duration-200 cursor-pointer"
           >
             <svg
               className="w-6 h-6 text-primary flex-shrink-0"
