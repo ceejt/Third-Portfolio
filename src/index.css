@@ -39,6 +39,16 @@
     background-size: var(--grain-size);
   }
 
+  html {
+    scroll-padding-top: 2rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   ::selection {
     background-color: rgb(var(--accent) / 0.15);
     color: rgb(var(--accent));

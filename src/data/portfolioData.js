@@ -14,6 +14,7 @@ export const portfolioData = {
     phone: "+63-917-193-7051",
     resumeUrl: assetPath("/assets/cj-tinae-2.pdf"),
     profileImage: assetPath("/assets/images/profile.jpg"),
+    logo: assetPath("/assets/images/logo-c.svg"),
   },
 
   status: {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
+import Rail from "./components/Rail";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import TechStack from "./components/TechStack";
@@ -25,32 +26,38 @@ function App() {
       <ThemeToggle />
 
       {/* Main Content */}
-      <div className="section-container">
-        <Header />
+      <div id="top" className="section-container">
+        <div className="lg:flex lg:gap-10">
+          <Rail />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-          {/* Left Column - Main Content */}
-          <div className="lg:col-span-2 space-y-8">
-            <About />
-            <Experience />
+          <div className="min-w-0 flex-1">
+            <Header />
 
-            <div className="lg:hidden">
-              <Leadership />
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+              {/* Left Column - Main Content */}
+              <div className="lg:col-span-2 space-y-8">
+                <About />
+                <Experience />
+
+                <div className="lg:hidden">
+                  <Leadership />
+                </div>
+
+                <TechStack />
+                <Certifications />
+                <Projects />
+                <Goals />
+                <Afterhours />
+                <Social />
+                <Contact />
+                <Gallery onImageClick={setSelectedImage} />
+              </div>
+
+              {/* Right Column - Leadership */}
+              <div className="hidden lg:block lg:col-span-1">
+                <Leadership />
+              </div>
             </div>
-
-            <TechStack />
-            <Certifications />
-            <Projects />
-            <Goals />
-            <Afterhours />
-            <Social />
-            <Contact />
-            <Gallery onImageClick={setSelectedImage} />
-          </div>
-
-          {/* Right Column - Leadership */}
-          <div className="hidden lg:block lg:col-span-1">
-            <Leadership />
           </div>
         </div>
       </div>
