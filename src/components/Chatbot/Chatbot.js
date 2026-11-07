@@ -15,6 +15,17 @@ const Chatbot = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
+  const [showHint, setShowHint] = useState(false);
+
+  // Show the label once after load so first-time visitors notice the button.
+  useEffect(() => {
+    const on = setTimeout(() => setShowHint(true), 2000);
+    const off = setTimeout(() => setShowHint(false), 6500);
+    return () => {
+      clearTimeout(on);
+      clearTimeout(off);
+    };
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -125,56 +136,63 @@ const Chatbot = () => {
         </div>
       )}
 
-      {/* Floating Button with Popup */}
+      {/* Floating button: icon that widens to show its name */}
       <div className="fixed bottom-6 right-6 z-40">
-        {!isOpen && (
-          <div className="absolute bottom-16 right-0 mb-2 animate-bounce">
-            <span className="absolute -top-1 -right-1 flex size-3">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 opacity-75"></span>
-              <span className="relative inline-flex size-3 rounded-full bg-green-500"></span>
-            </span>
-            <div className="bg-secondary dark:bg-primary text-white dark:text-secondary px-4 py-2 rounded-lg shadow-lg whitespace-nowrap text-sm font-medium">
-              Ask TinAI!
-              <div className="absolute -bottom-1 right-6 w-2 h-2 bg-secondary dark:bg-primary transform rotate-45"></div>
-            </div>
-          </div>
-        )}
-
-        {/* Chat Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 bg-secondary dark:bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-          aria-label="Open chat"
+          className="group relative flex h-12 items-center overflow-hidden rounded-full bg-secondary text-white shadow-lg transition-colors duration-200 hover:bg-accent focus-visible:bg-accent dark:bg-primary dark:text-secondary dark:hover:bg-accent dark:focus-visible:bg-accent"
+          aria-label={isOpen ? "Close chat" : "Open chat"}
+          aria-expanded={isOpen}
         >
-          {isOpen ? (
-            <svg
-              className="w-6 h-6 text-white dark:text-secondary"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              className="w-6 h-6 text-white dark:text-secondary"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
-              />
-            </svg>
-          )}
+          <span className="relative flex h-12 w-12 shrink-0 items-center justify-center">
+            {isOpen ? (
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                />
+              </svg>
+            )}
+            {!isOpen && (
+              <span className="absolute right-2 top-2 flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 motion-reduce:animate-none"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+              </span>
+            )}
+          </span>
+
+          <span
+            className={`grid min-w-0 transition-[grid-template-columns] duration-200 ease-out motion-reduce:transition-none group-hover:grid-cols-[1fr] group-focus-visible:grid-cols-[1fr] ${
+              showHint && !isOpen ? "grid-cols-[1fr]" : "grid-cols-[0fr]"
+            }`}
+          >
+            <span className="min-w-0 overflow-hidden">
+              <span className="block whitespace-nowrap pr-5 text-sm font-medium">
+                {isOpen ? "Close" : "Ask TinAI"}
+              </span>
+            </span>
+          </span>
         </button>
       </div>
     </>
