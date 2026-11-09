@@ -70,7 +70,8 @@ const Chatbot = () => {
   return (
     <>
       {isOpen && (
-        <div className="blur-in fixed bottom-24 right-6 z-40 flex h-[500px] w-96 max-w-[calc(100vw-3rem)] flex-col rounded-xl bg-light-bg shadow-2xl ring-1 ring-black/5 dark:bg-dark-bg dark:ring-white/10">
+        <div className="fixed bottom-24 right-6 z-40 w-96 max-w-[calc(100vw-3rem)] drop-shadow-2xl">
+          <div className="blur-in cut cut-lg flex h-[500px] flex-col bg-light-card dark:bg-dark-card">
           <div className="flex items-center justify-between px-5 pb-2 pt-5">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-green-500 motion-safe:animate-pulse"></div>
@@ -125,7 +126,7 @@ const Chatbot = () => {
                   <button
                     key={index}
                     onClick={() => handleSuggestionClick(suggestion)}
-                    className="rounded-full bg-light-card px-3 py-1.5 text-h4 transition-colors duration-200 hover:bg-accent hover:text-white dark:bg-dark-card dark:hover:text-dark-bg"
+                    className="cut cut-sm bg-light-bg px-3 py-1.5 text-h4 transition-colors duration-200 hover:bg-accent hover:text-white dark:bg-dark-bg dark:hover:text-dark-bg"
                   >
                     {suggestion}
                   </button>
@@ -134,14 +135,15 @@ const Chatbot = () => {
           )}
 
           <ChatInput onSend={handleSendMessage} isLoading={isLoading} />
+          </div>
         </div>
       )}
 
       {/* Floating button: icon that widens to show its name */}
-      <div className="fixed bottom-6 right-6 z-40">
+      <div className="fixed bottom-6 right-6 z-40 drop-shadow-lg">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="group relative flex h-12 items-center overflow-hidden rounded-full bg-secondary text-white shadow-lg transition-colors duration-200 hover:bg-accent focus-visible:bg-accent dark:bg-primary dark:text-secondary dark:hover:bg-accent dark:focus-visible:bg-accent"
+          className="group cut relative flex h-12 items-center overflow-hidden bg-accent text-white transition-[filter] duration-200 hover:brightness-110 focus-visible:brightness-110 dark:text-dark-bg"
           aria-label={isOpen ? "Close chat" : "Open chat"}
           aria-expanded={isOpen}
         >

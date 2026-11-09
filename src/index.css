@@ -159,12 +159,56 @@
     @apply bg-light-card dark:bg-dark-card border border-border rounded-lg p-6 transition-all duration-300;
   }
 
+  /* The signature cut: top-right and bottom-left corners sliced at 45
+     degrees, like the C in the logo. Clipping hides borders and shadows,
+     so cut elements use fills, and the focus ring is drawn inside. */
+  .cut {
+    --cut: 10px;
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--cut)) 0,
+      100% var(--cut),
+      100% 100%,
+      var(--cut) 100%,
+      0 calc(100% - var(--cut))
+    );
+  }
+
+  .cut-sm {
+    --cut: 6px;
+  }
+
+  .cut-lg {
+    --cut: 20px;
+  }
+
+  .cut:focus-visible {
+    outline-offset: -3px;
+  }
+
   .btn-primary {
-    @apply bg-secondary dark:bg-primary text-white dark:text-secondary px-5 py-2.5 rounded-md font-medium hover:bg-accent hover:text-white dark:hover:text-dark-bg transition-colors duration-200;
+    @apply cut bg-accent px-5 py-2.5 font-medium text-white transition-[filter] duration-200 hover:brightness-110 dark:text-dark-bg;
   }
 
   .btn-secondary {
-    @apply border border-border px-5 py-2.5 rounded-md font-medium hover:border-accent hover:text-accent transition-colors duration-200;
+    @apply cut bg-light-card px-5 py-2.5 font-medium transition-colors duration-200 hover:text-accent dark:bg-dark-card;
+  }
+
+  .chip {
+    @apply cut cut-sm bg-light-card px-3 py-1 text-h4 transition duration-200 hover:-translate-y-1 hover:bg-accent/10 hover:text-accent dark:bg-dark-card;
+  }
+
+  /* Section title marker: the tile wedge, small, in the accent. */
+  section[id] > h2::before,
+  section[id] > div > h2::before {
+    content: "";
+    display: inline-block;
+    width: 0.42em;
+    height: 0.42em;
+    margin-right: 0.55em;
+    vertical-align: 0.12em;
+    background: rgb(var(--accent));
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
   }
 }
 

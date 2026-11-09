@@ -19,13 +19,13 @@ const ChatInput = ({ onSend, isLoading }) => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask me anything..."
-          className="flex-1 rounded-full bg-light-card px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/60 dark:bg-dark-card"
+          className="cut cut-sm flex-1 bg-light-bg px-4 py-2.5 text-sm focus:outline-none focus:shadow-[inset_0_0_0_2px_rgb(var(--accent)/0.7)] dark:bg-dark-bg"
           disabled={isLoading}
         />
         <button
           type="submit"
           disabled={!input.trim() || isLoading}
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 dark:text-dark-bg"
+          className="cut cut-sm flex h-10 w-10 shrink-0 items-center justify-center bg-accent text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 dark:text-dark-bg"
           aria-label="Send message"
         >
           <svg

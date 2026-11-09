@@ -27,7 +27,7 @@ const TechStack = () => {
             {techStack.frontend.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
+                className="chip"
               >
                 {tech}
               </span>
@@ -42,7 +42,7 @@ const TechStack = () => {
             {techStack.backend.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
+                className="chip"
               >
                 {tech}
               </span>
@@ -57,7 +57,7 @@ const TechStack = () => {
             {techStack.ai.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
+                className="chip"
               >
                 {tech}
               </span>
@@ -72,7 +72,7 @@ const TechStack = () => {
             {techStack.aiTools.map((tool, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
+                className="chip"
               >
                 {tool}
               </span>
@@ -87,7 +87,7 @@ const TechStack = () => {
             {techStack.tools.map((tool, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
+                className="chip"
               >
                 {tool}
               </span>
@@ -103,7 +103,7 @@ const TechStack = () => {
               <div key={index} className="flex justify-between items-center">
                 <span
                   key={index}
-                  className="px-3 py-1 bg-light-card dark:bg-dark-card rounded-md text-h4 hover-lift"
+                  className="chip"
                 >
                   {lang.name} ({lang.level})
                 </span>
