@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import ChatMessage from "./ChatMessage";
 import ChatInput from "./ChatInput";
 import { sendMessage, getSuggestions } from "../../utils/chatLogic";
+import { portfolioData } from "../../data/portfolioData";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +56,7 @@ const Chatbot = () => {
         ...newMessages,
         {
           role: "assistant",
-          content: "I'm sorry, I encountered an error. Please try again.",
+          content: `I could not answer that just now. Please try again, or email ${portfolioData.profile.email}.`,
         },
       ]);
     } finally {

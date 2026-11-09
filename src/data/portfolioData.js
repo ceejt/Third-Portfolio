@@ -9,6 +9,7 @@ export const portfolioData = {
     headline:
       "I'm a fullstack developer who builds web products and the AI features inside them.",
     title: "Fullstack Developer & Designer | AI Integration | Technical SEO",
+    availability: "Open to fullstack and AI integration roles",
     location: "Cebu City, Philippines",
     email: "tinaecyriljosef@gmail.com",
     phone: "+63-917-193-7051",
@@ -118,11 +119,6 @@ export const portfolioData = {
   },
 
   leadership: [
-    {
-      title: "Hire me!",
-      description: "Open to fullstack and AI integration roles",
-      year: "2026",
-    },
     {
       title: "CMSC 130 Project Showcase",
       description: "3rd Place",

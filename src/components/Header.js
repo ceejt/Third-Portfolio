@@ -57,7 +57,15 @@ const Header = () => {
             <p className="text-sm text-muted font-fira">{profile.location}</p>
           </div>
 
-          <p className="text-p mb-4">{profile.title}</p>
+          <p className="text-p mb-2">{profile.title}</p>
+
+          <p className="mb-4 flex items-center justify-center gap-2 text-ui text-muted md:justify-start">
+            <span
+              className="h-2 w-2 rounded-full bg-green-500"
+              aria-hidden="true"
+            ></span>
+            {profile.availability}
+          </p>
 
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
             <button

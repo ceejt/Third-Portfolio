@@ -155,10 +155,6 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
   }
 
-  .card {
-    @apply bg-light-card dark:bg-dark-card border border-border rounded-lg p-6 transition-all duration-300;
-  }
-
   /* The signature cut: top-right and bottom-left corners sliced at 45
      degrees, like the C in the logo. Clipping hides borders and shadows,
      so cut elements use fills, and the focus ring is drawn inside. */

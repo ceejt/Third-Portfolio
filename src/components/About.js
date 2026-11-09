@@ -15,7 +15,7 @@ const About = () => {
       ref={ref}
       className={`animate-on-scroll ${inView ? "visible" : ""}`}
     >
-      <div className="flex items-center gap-2 mb-4">
+      <div className="flex items-center gap-2 mb-6">
         <h2>About</h2>
       </div>
 

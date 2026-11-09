@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="mt-16 py-8 border-t border-border">
+    <footer className="mt-16 border-t border-border/40 py-8">
       <div className="section-container">
         <p className="text-center text-h4 text-muted font-fira">
           Designed & developed by ceejt

@@ -16,7 +16,7 @@ const TechStack = () => {
       className={`animate-on-scroll ${inView ? "visible" : ""}`}
     >
       <div className="flex items-center gap-2 mb-6">
-        <h2>Tech Stack & Skills</h2>
+        <h2>Skills</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

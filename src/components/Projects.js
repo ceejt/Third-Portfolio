@@ -68,7 +68,7 @@ const Projects = () => {
       ref={ref}
       className={`animate-on-scroll ${inView ? "visible" : ""}`}
     >
-      <h2 className="mb-6">Recent Projects</h2>
+      <h2 className="mb-6">Projects</h2>
 
       <div className="grid grid-cols-1 gap-x-7 gap-y-12 sm:grid-cols-2">
         {projects.map((project) => (
