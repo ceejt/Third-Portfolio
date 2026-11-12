@@ -45,7 +45,7 @@ const ImageModal = ({ imageUrl, onClose }) => {
 
       <img
         src={imageUrl}
-        alt="Gallery"
+        alt="Enlarged gallery view"
         className="max-w-full max-h-full object-contain"
         onClick={(e) => e.stopPropagation()}
       />

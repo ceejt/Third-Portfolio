@@ -5,6 +5,21 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --accent: 142 27 46;
+    --muted: 75 85 99;
+    --grain-opacity: 0.22;
+    --grain-blend: multiply;
+    --grain-size: 240px;
+  }
+
+  :root.dark {
+    --accent: 224 85 106;
+    --muted: 156 163 175;
+    --grain-opacity: 0.1;
+    --grain-blend: screen;
+  }
+
   * {
     @apply font-geist;
   }
@@ -13,11 +28,44 @@
     @apply bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text transition-colors duration-300;
   }
 
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: var(--grain-opacity);
+    mix-blend-mode: var(--grain-blend);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: var(--grain-size);
+  }
+
+  html {
+    scroll-padding-top: 2rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  ::selection {
+    background-color: rgb(var(--accent) / 0.15);
+    color: rgb(var(--accent));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 2px;
+  }
+
   h1 {
-    @apply text-h1 font-semibold;
+    @apply font-display text-h1 font-semibold;
   }
   h2 {
-    @apply text-h2 font-semibold;
+    @apply font-display text-h2 font-semibold;
   }
   h3 {
     @apply text-h3 font-medium;
@@ -27,24 +75,136 @@
   }
   p {
     @apply text-p;
+    text-wrap: pretty;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
   }
 }
 
 @layer components {
+  /* Project tile: two corners cut at 45 degrees, like the C in the logo.
+     A maroon wedge fills the top-right cut and widens on hover. */
+  .tile {
+    --c: var(--c0, 22px);
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      var(--cut, 20px) 100%,
+      0 calc(100% - var(--cut, 20px))
+    );
+  }
+
+  /* Smaller cuts for square gallery tiles */
+  .tile-square {
+    --c0: 14px;
+    --c1: 36px;
+    --cut: 12px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .tile img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--c)) 0,
+      100% var(--c),
+      100% 100%,
+      0 100%
+    );
+    transition: clip-path 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .tile::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--c);
+    height: var(--c);
+    background: rgb(var(--accent));
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    transition:
+      width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .group:hover .tile,
+  .group:focus-visible .tile {
+    --c: var(--c1, 56px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tile img,
+    .tile::after {
+      transition: none;
+    }
+  }
+
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
   }
 
-  .card {
-    @apply bg-light-card dark:bg-dark-card border border-border rounded-lg p-6 transition-all duration-300;
+  /* The signature cut: top-right and bottom-left corners sliced at 45
+     degrees, like the C in the logo. Clipping hides borders and shadows,
+     so cut elements use fills, and the focus ring is drawn inside. */
+  .cut {
+    --cut: 10px;
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--cut)) 0,
+      100% var(--cut),
+      100% 100%,
+      var(--cut) 100%,
+      0 calc(100% - var(--cut))
+    );
+  }
+
+  .cut-sm {
+    --cut: 6px;
+  }
+
+  .cut-lg {
+    --cut: 20px;
+  }
+
+  .cut:focus-visible {
+    outline-offset: -3px;
   }
 
   .btn-primary {
-    @apply bg-secondary dark:bg-primary text-white dark:text-secondary px-5 py-2.5 rounded-md font-medium hover:opacity-90 transition-opacity duration-200;
+    @apply cut bg-accent px-5 py-2.5 font-medium text-white transition-[filter] duration-200 hover:brightness-110 dark:text-dark-bg;
   }
 
   .btn-secondary {
-    @apply border border-border px-5 py-2.5 rounded-md font-medium hover:bg-light-card dark:hover:bg-dark-card transition-colors duration-200;
+    @apply cut bg-light-card px-5 py-2.5 font-medium transition-colors duration-200 hover:text-accent dark:bg-dark-card;
+  }
+
+  .chip {
+    @apply cut cut-sm bg-light-card px-3 py-1 text-h4 transition duration-200 hover:-translate-y-1 hover:bg-accent/10 hover:text-accent dark:bg-dark-card;
+  }
+
+  /* Section title marker: the tile wedge, small, in the accent. */
+  section[id] > h2::before,
+  section[id] > div > h2::before {
+    content: "";
+    display: inline-block;
+    width: 0.42em;
+    height: 0.42em;
+    margin-right: 0.55em;
+    vertical-align: 0.12em;
+    background: rgb(var(--accent));
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
   }
 }
 
@@ -60,4 +220,147 @@ body {
 code {
   font-family:
     source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Custom cursor: a faceted diamond. Logic lives in components/Cursor.js.
+   The native cursor stays on inputs and on touch devices. */
+html.has-cx,
+html.has-cx * {
+  cursor: none !important;
+}
+
+html.has-cx :is(input, textarea, select, [contenteditable="true"], [data-cursor="native"]) {
+  cursor: auto !important;
+}
+
+.cx {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  will-change: transform;
+}
+
+.cx.cx-on {
+  opacity: 1;
+}
+
+.cx.cx-native {
+  opacity: 0;
+}
+
+.cx-body {
+  position: relative;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s ease-out;
+}
+
+.cx-down .cx-body {
+  transform: translate(-50%, -50%) scale(0.75);
+}
+
+.cx-dia {
+  display: block;
+  width: 14px;
+  height: 21px;
+  overflow: visible;
+  transition:
+    width 0.18s,
+    height 0.18s;
+}
+
+.cx-base {
+  fill: rgb(var(--accent));
+}
+
+.cx-link .cx-dia {
+  width: 9px;
+  height: 14px;
+}
+
+.cx-spin {
+  animation: cx-spin 2.4s ease-in-out infinite;
+}
+
+.cx-link .cx-spin {
+  animation: none;
+}
+
+.cx-bar {
+  display: none;
+  width: 2px;
+  height: 22px;
+  background: rgb(var(--accent));
+}
+
+.cx-text .cx-bar {
+  display: block;
+}
+
+.cx-text .cx-spin {
+  display: none;
+}
+
+.cx-label {
+  position: absolute;
+  left: 14px;
+  top: 8px;
+  --cut: 5px;
+  padding: 4px 9px;
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: #fff;
+  background: rgb(var(--accent));
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--cut)) 0,
+    100% var(--cut),
+    100% 100%,
+    var(--cut) 100%,
+    0 calc(100% - var(--cut))
+  );
+  opacity: 0;
+  transform: translateX(-4px);
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
+}
+
+html.dark .cx-label {
+  color: #121212;
+}
+
+.cx-has-label .cx-label {
+  opacity: 1;
+  transform: none;
+}
+
+.cx-flip .cx-label {
+  left: auto;
+  right: 14px;
+}
+
+@keyframes cx-spin {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cx-spin {
+    animation: none;
+  }
+  .cx-body,
+  .cx-dia,
+  .cx-label {
+    transition: none;
+  }
 }

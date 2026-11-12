@@ -2,7 +2,7 @@ import React from "react";
 import { portfolioData } from "../data/portfolioData";
 
 const Header = () => {
-  const { profile } = portfolioData;
+  const { profile, status } = portfolioData;
 
   const handleViewResume = () => {
     window.open(profile.resumeUrl, "_blank");
@@ -13,8 +13,15 @@ const Header = () => {
   };
 
   return (
-    <header className="animate-fade-in">
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+    <header>
+      <p className="blur-in max-w-[20ch] text-balance pb-12 pt-8 font-display text-4xl font-semibold leading-[1.08] tracking-[-0.01em] md:text-[3.5rem]">
+        {profile.headline}
+      </p>
+
+      <div
+        className="blur-in flex flex-col md:flex-row items-center md:items-start gap-6"
+        style={{ "--delay": "0.15s" }}
+      >
         <div className="flex-shrink-0">
           <div className="w-40 h-40 rounded-lg overflow-hidden">
             <img
@@ -28,16 +35,16 @@ const Header = () => {
 
         <div className="flex-1 text-center md:text-left">
           <div className="flex items-baseline justify-center md:justify-start gap-3 mb-2">
-            <h1 className="text-2xl md:text-3xl font-bold">{profile.name}</h1>
-            <h4 className="text-sm text-primary font-fira">
+            <h1 className="text-2xl md:text-3xl font-semibold">{profile.name}</h1>
+            <span className="text-sm text-muted font-fira">
               ({profile.nickname})
-            </h4>
+            </span>
             {/* <span className="text-2xl md:text-3xl">💻</span> */}
           </div>
 
           <div className="flex items-center justify-center md:justify-start gap-1 mb-2">
             <svg
-              className="w-4 h-4 text-primary flex-shrink-0"
+              className="w-4 h-4 text-muted flex-shrink-0"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -47,10 +54,18 @@ const Header = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <p className="text-sm text-primary font-fira">{profile.location}</p>
+            <p className="text-sm text-muted font-fira">{profile.location}</p>
           </div>
 
-          <p className="text-p mb-4">{profile.title}</p>
+          <p className="text-p mb-2">{profile.title}</p>
+
+          <p className="mb-4 flex items-center justify-center gap-2 text-ui text-muted md:justify-start">
+            <span
+              className="h-2 w-2 rounded-full bg-green-500"
+              aria-hidden="true"
+            ></span>
+            {profile.availability}
+          </p>
 
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
             <button
@@ -86,6 +101,32 @@ const Header = () => {
           </div>
         </div>
       </div>
+
+      <dl
+        className="blur-in mt-10 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10"
+        style={{ "--delay": "0.3s" }}
+      >
+        <div>
+          <dt className="text-ui text-muted">
+            Currently
+          </dt>
+          <dd className="mt-1 text-ui leading-snug">{status.currently}</dd>
+        </div>
+        <div>
+          <dt className="text-ui text-muted">
+            Previously
+          </dt>
+          <dd className="mt-1 text-ui leading-snug">
+            {status.previously}{" "}
+            <a
+              href="#experience"
+              className="underline underline-offset-2 transition-colors duration-200 hover:text-accent"
+            >
+              See experience
+            </a>
+          </dd>
+        </div>
+      </dl>
     </header>
   );
 };

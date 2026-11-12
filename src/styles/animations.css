@@ -28,18 +28,57 @@
   }
 }
 
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+/* Entrance: fade and sharpen. Set --delay inline to stagger. */
+.blur-in {
+  opacity: 0;
+  animation: blurIn 0.5s ease-out var(--delay, 0s) forwards;
+}
+
+/* Page change: the routed content fades in from a light blur. */
+.page-in {
+  animation: blurIn 0.3s ease-out;
+}
+
 /* Scroll animations */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(20px);
+  filter: blur(6px);
   transition:
-    opacity 0.6s ease-out,
-    transform 0.6s ease-out;
+    opacity 0.5s ease-out,
+    filter 0.5s ease-out;
 }
 
 .animate-on-scroll.visible {
   opacity: 1;
-  transform: translateY(0);
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-in {
+    animation: none;
+  }
+
+  .blur-in {
+    opacity: 1;
+    animation: none;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    filter: none;
+    transition: none;
+  }
 }
 
 /* Hover effects */

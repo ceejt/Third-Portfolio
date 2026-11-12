@@ -6,21 +6,30 @@ export const portfolioData = {
   profile: {
     name: "Cyril Josef A. Tinae",
     nickname: "CJ",
+    headline:
+      "I'm a fullstack developer who builds web products and the AI features inside them.",
     title: "Fullstack Developer & Designer | AI Integration | Technical SEO",
+    availability: "Open to fullstack and AI integration roles",
     location: "Cebu City, Philippines",
     email: "tinaecyriljosef@gmail.com",
     phone: "+63-917-193-7051",
     resumeUrl: assetPath("/assets/cj-tinae-2.pdf"),
     profileImage: assetPath("/assets/images/profile.jpg"),
+    logo: assetPath("/assets/images/logo-c.svg"),
+  },
+
+  status: {
+    currently: "Studying Computer Science at UP Cebu and building SlipStream and FinFlow.",
+    previously:
+      "Fullstack developer at InstaCode, website manager and designer at XGrowth.",
   },
 
   about: {
     intro:
-      "I am a fullstack developer and designer who builds web products and adds AI features to them. I study Computer Science at the University of the Philippines Cebu (Cum Laude standing, expected July 2028).",
-    experience:
-      "In 2026, I worked as a fullstack developer at InstaCode, where I built Vue.js features, an AI coach chat widget, and an MCP server integration. At XGrowth, I manage a real estate website end to end: I design in Figma, build on Snapps, and handle the technical side, including the PHP and MySQL listing backend, MLS integration, and DNS and server issues.",
-    current:
-      "Right now, I am building personal projects like FinFlow and SlipStream, and I am looking for a full-time fullstack or AI integration role.",
+      "I like building things that work from end to end: the interface, the data behind it, and the checks that show it works.",
+    approach:
+      "I use Claude Code every day, and I still check the output. My SlipStream predictor, for example, publishes its scores next to a simple grid-order baseline, including when it falls short.",
+    next: "I am looking for a full-time fullstack or AI integration role where I can ship real product features, and I want to keep building AI tools such as chat assistants and MCP integrations. I am also working toward my first AWS certification.",
   },
 
   experience: [
@@ -110,11 +119,6 @@ export const portfolioData = {
   },
 
   leadership: [
-    {
-      title: "Hire me!",
-      description: "Open to fullstack and AI integration roles",
-      year: "2026",
-    },
     {
       title: "CMSC 130 Project Showcase",
       description: "3rd Place",
@@ -228,10 +232,19 @@ export const portfolioData = {
 
   projects: [
     {
+      title: "SlipStream",
+      description:
+        "Python Formula 1 podium predictor with leak-free features, walk-forward validation across 80+ races, and per-race reports with SHAP explanations",
+      url: "slipstream-reports.vercel.app",
+      image: assetPath("/assets/images/projects/slipstream.jpg"),
+      type: "Data App",
+    },
+    {
       title: "BudgetWise",
       description:
         "Fullstack finance app in Next.js and Supabase with income and expense tracking, e-wallet integrations, and AI financial tips ",
       url: "budgetwise-lvm.vercel.app",
+      image: assetPath("/assets/images/projects/budgetwise.jpg"),
       type: "Website",
     },
     {
@@ -239,12 +252,14 @@ export const portfolioData = {
       description:
         "Local-first financial advisor skill in Python that projects cash flow and answers affordability questions, with a private JSON profile",
       url: "github.com/ceejt/finflow",
+      image: assetPath("/assets/images/projects/finflow.jpg"),
       type: "Tool",
     },
     {
       title: "Ligtasyon Landing Page",
       description: "Applied sleek and intuitive UI in React + Vite",
       url: "ligtasyon-landing.vercel.app",
+      image: assetPath("/assets/images/projects/ligtasyon.jpg"),
       type: "Web App",
     },
 
@@ -252,13 +267,27 @@ export const portfolioData = {
       title: "Snippit Landing Page",
       description: "Animated and intuitive UI in React",
       url: "snippit-landing.vercel.app",
+      image: assetPath("/assets/images/projects/snippit.jpg"),
       type: "Web App",
     },
     {
       title: "Design Projects",
       description: "UI and Layout Designs",
       url: "ceejt-design.vercel.app",
+      image: assetPath("/assets/images/projects/design.jpg"),
       type: "Creative Work",
+    },
+  ],
+
+  notes: [
+    {
+      slug: "developers-as-architects",
+      title: "Developers as architects and inspectors",
+      date: "",
+      summary:
+        "AI is moving developers from writing code toward designing systems and checking the work. What that changes, and what skill to protect.",
+      status: "soon",
+      body: [],
     },
   ],
 
