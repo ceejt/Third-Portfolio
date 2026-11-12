@@ -34,7 +34,11 @@ const NoteList = () => {
           return (
             <li key={note.slug}>
               {isReady(note) ? (
-                <a href={`#/notes/${note.slug}`} className="group block">
+                <a
+                  href={`#/notes/${note.slug}`}
+                  className="group block"
+                  data-cursor-text="Read note"
+                >
                   {body}
                 </a>
               ) : (

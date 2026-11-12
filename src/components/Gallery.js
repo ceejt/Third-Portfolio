@@ -26,6 +26,7 @@ const Gallery = ({ onImageClick }) => {
             type="button"
             className="group block w-full text-left"
             aria-label={`Open gallery image ${index + 1}`}
+            data-cursor-text="View photo"
             onClick={() => onImageClick(image)}
           >
             <div className="tile tile-square bg-light-card dark:bg-dark-card">

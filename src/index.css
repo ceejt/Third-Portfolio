@@ -221,3 +221,146 @@ code {
   font-family:
     source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+/* Custom cursor: a faceted diamond. Logic lives in components/Cursor.js.
+   The native cursor stays on inputs and on touch devices. */
+html.has-cx,
+html.has-cx * {
+  cursor: none !important;
+}
+
+html.has-cx :is(input, textarea, select, [contenteditable="true"], [data-cursor="native"]) {
+  cursor: auto !important;
+}
+
+.cx {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  will-change: transform;
+}
+
+.cx.cx-on {
+  opacity: 1;
+}
+
+.cx.cx-native {
+  opacity: 0;
+}
+
+.cx-body {
+  position: relative;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s ease-out;
+}
+
+.cx-down .cx-body {
+  transform: translate(-50%, -50%) scale(0.75);
+}
+
+.cx-dia {
+  display: block;
+  width: 14px;
+  height: 21px;
+  overflow: visible;
+  transition:
+    width 0.18s,
+    height 0.18s;
+}
+
+.cx-base {
+  fill: rgb(var(--accent));
+}
+
+.cx-link .cx-dia {
+  width: 9px;
+  height: 14px;
+}
+
+.cx-spin {
+  animation: cx-spin 2.4s ease-in-out infinite;
+}
+
+.cx-link .cx-spin {
+  animation: none;
+}
+
+.cx-bar {
+  display: none;
+  width: 2px;
+  height: 22px;
+  background: rgb(var(--accent));
+}
+
+.cx-text .cx-bar {
+  display: block;
+}
+
+.cx-text .cx-spin {
+  display: none;
+}
+
+.cx-label {
+  position: absolute;
+  left: 14px;
+  top: 8px;
+  --cut: 5px;
+  padding: 4px 9px;
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: #fff;
+  background: rgb(var(--accent));
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--cut)) 0,
+    100% var(--cut),
+    100% 100%,
+    var(--cut) 100%,
+    0 calc(100% - var(--cut))
+  );
+  opacity: 0;
+  transform: translateX(-4px);
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
+}
+
+html.dark .cx-label {
+  color: #121212;
+}
+
+.cx-has-label .cx-label {
+  opacity: 1;
+  transform: none;
+}
+
+.cx-flip .cx-label {
+  left: auto;
+  right: 14px;
+}
+
+@keyframes cx-spin {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cx-spin {
+    animation: none;
+  }
+  .cx-body,
+  .cx-dia,
+  .cx-label {
+    transition: none;
+  }
+}

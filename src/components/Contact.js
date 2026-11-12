@@ -2,6 +2,12 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { portfolioData } from "../data/portfolioData";
 
+const CURSOR_TEXT = {
+  Email: "Email me",
+  Mobile: "Call me",
+  WhatsApp: "Message me",
+};
+
 const Contact = () => {
   const { profile } = portfolioData;
   const { ref, inView } = useInView({
@@ -46,6 +52,7 @@ const Contact = () => {
           <a
             key={info.type}
             href={info.href}
+            data-cursor-text={CURSOR_TEXT[info.type]}
             {...(info.external
               ? { target: "_blank", rel: "noopener noreferrer" }
               : {})}

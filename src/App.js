@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import ThemeToggle from "./components/ThemeToggle";
 import Chatbot from "./components/Chatbot/Chatbot";
 import ImageModal from "./components/Modal/ImageModal";
+import Cursor from "./components/Cursor";
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -40,6 +41,8 @@ function App() {
 
   return (
     <div className="min-h-screen">
+      <Cursor />
+
       {/* Theme Toggle */}
       <ThemeToggle />
 

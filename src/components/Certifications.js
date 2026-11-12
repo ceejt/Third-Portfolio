@@ -27,6 +27,7 @@ const Certifications = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="group block"
+            data-cursor-text="View certificate"
           >
             <div className="border-t border-border/40 pt-4">
               <h3 className="mb-1 font-semibold transition-colors duration-200 group-hover:text-accent">

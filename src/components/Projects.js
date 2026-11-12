@@ -48,6 +48,7 @@ const ProjectItem = ({ project }) => {
       target="_blank"
       rel="noopener noreferrer"
       className="group block"
+      data-cursor-text="View website"
     >
       {tile}
       {caption}

@@ -66,6 +66,7 @@ const Social = () => {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
+            data-cursor-text="Visit profile"
             className="flex items-center gap-2 py-2 hover:text-accent transition-colors duration-200"
           >
             {typeof link.icon === "string" ? (
