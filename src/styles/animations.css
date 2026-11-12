@@ -45,6 +45,11 @@
   animation: blurIn 0.5s ease-out var(--delay, 0s) forwards;
 }
 
+/* Page change: the routed content fades in from a light blur. */
+.page-in {
+  animation: blurIn 0.3s ease-out;
+}
+
 /* Scroll animations */
 .animate-on-scroll {
   opacity: 0;
@@ -60,6 +65,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .page-in {
+    animation: none;
+  }
+
   .blur-in {
     opacity: 1;
     animation: none;

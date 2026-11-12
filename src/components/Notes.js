@@ -7,7 +7,7 @@ const NoteList = () => {
   const { notes } = portfolioData;
 
   return (
-    <div className="blur-in max-w-3xl pb-16">
+    <div className="max-w-3xl pb-16">
       <h1 className="pt-8 text-3xl font-semibold leading-tight tracking-[-0.01em] md:text-5xl">
         Notes
       </h1>
@@ -58,7 +58,7 @@ const Note = ({ slug }) => {
 
   if (!note) {
     return (
-      <div className="blur-in max-w-3xl pb-16 pt-8">
+      <div className="max-w-3xl pb-16 pt-8">
         <p className="text-ui">
           That note does not exist.{" "}
           <a href="#/notes" className="underline underline-offset-2 hover:text-accent">
@@ -70,7 +70,7 @@ const Note = ({ slug }) => {
   }
 
   return (
-    <article className="blur-in max-w-2xl pb-16 pt-8">
+    <article className="max-w-2xl pb-16 pt-8">
       <a
         href="#/notes"
         className="text-ui text-muted transition-colors duration-200 hover:text-accent"

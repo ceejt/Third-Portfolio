@@ -25,6 +25,17 @@ function App() {
   const onNotes = hash.startsWith("#/notes");
   const wasOnNotes = useRef(false);
 
+  // New key per page replays the transition. Section links on the home page
+  // share one key, so scrolling to a section does not replay it. The first
+  // render skips it, because the hero has its own entrance.
+  const pageKey = onNotes ? hash : "home";
+  const lastKey = useRef(null);
+  const animatePage = useRef(false);
+  if (lastKey.current !== pageKey) {
+    animatePage.current = lastKey.current !== null;
+    lastKey.current = pageKey;
+  }
+
   // Notes open at the top. Leaving Notes for a section link scrolls to it,
   // because that section did not exist when the browser tried to jump.
   useEffect(() => {
@@ -52,26 +63,31 @@ function App() {
           <Rail onNotes={onNotes} />
 
           <div className="min-w-0 max-w-4xl flex-1">
-            {onNotes ? (
-              <Notes hash={hash} />
-            ) : (
-              <>
-                <Header />
+            <div
+              key={pageKey}
+              className={animatePage.current ? "page-in" : undefined}
+            >
+              {onNotes ? (
+                <Notes hash={hash} />
+              ) : (
+                <>
+                  <Header />
 
-                <div className="mt-24 space-y-24">
-                  <Projects />
-                  <About />
-                  <Experience />
-                  <TechStack />
-                  <Leadership />
-                  <Certifications />
-                  <Afterhours />
-                  <Social />
-                  <Contact />
-                  <Gallery onImageClick={setSelectedImage} />
-                </div>
-              </>
-            )}
+                  <div className="mt-24 space-y-24">
+                    <Projects />
+                    <About />
+                    <Experience />
+                    <TechStack />
+                    <Leadership />
+                    <Certifications />
+                    <Afterhours />
+                    <Social />
+                    <Contact />
+                    <Gallery onImageClick={setSelectedImage} />
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
