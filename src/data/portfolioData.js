@@ -19,20 +19,33 @@ export const portfolioData = {
   },
 
   status: {
-    currently: "Studying Computer Science at UP Cebu and building SlipStream and FinFlow.",
-    previously:
-      "Fullstack developer at InstaCode, website manager and designer at XGrowth.",
+    currently:
+      "Website manager and designer at XGrowth, studying Computer Science at UP Cebu, and building SlipStream and FinFlow.",
+    previously: "Fullstack developer at InstaCode.",
   },
 
   about: {
     intro:
       "I like building things that work from end to end: the interface, the data behind it, and the checks that show it works.",
     approach:
-      "I use Claude Code every day, and I still check the output. My SlipStream predictor, for example, publishes its scores next to a simple grid-order baseline, including when it falls short.",
+      "Claude Code is part of my daily workflow. It speeds up the first pass, and I read, test, and take responsibility for what ships. With SlipStream, I publish the predictor's scores next to a simple grid-order baseline, even where it falls short.",
     next: "I am looking for a full-time fullstack or AI integration role where I can ship real product features, and I want to keep building AI tools such as chat assistants and MCP integrations. I am also working toward my first AWS certification.",
   },
 
   experience: [
+    {
+      company: "XGrowth",
+      role: "Website Manager & Designer",
+      type: "Full-time, Remote",
+      period: "Mar 2026 - Present",
+      highlights: [
+        "Designed layouts in Figma and built 1440px HTML drafts for 8+ real estate pages on a shared design system.",
+        "Implemented approved designs on the Snapps (Duda) site builder, from draft to live deployment.",
+        "Fixed responsive issues caused by the builder re-applying inline styles, using grid and breakpoint settings.",
+        "Handled backend and server work: the PHP and MySQL MLS listing system, MLS data integration, and DNS and Cloudflare diagnostics.",
+        "Managed a real estate CRM, keeping listings, client records, and workflow updates accurate.",
+      ],
+    },
     {
       company: "InstaCode",
       role: "Fullstack Developer",
@@ -44,19 +57,6 @@ export const portfolioData = {
         "Developed a Groq-based AI coach chat widget with context-aware prompts, suggested prompt chips, and markdown responses.",
         "Integrated the InstaCode MCP server so AI agents can query app data, and fixed data-visibility bugs from missing foreign-key links.",
         "Contributed to a JSON-driven datatype schema engine for validation, test-data generation, and database type mapping.",
-      ],
-    },
-    {
-      company: "XGrowth",
-      role: "Website Manager & Designer",
-      type: "Full-time, Remote",
-      period: "Mar 2026 - Oct 2026",
-      highlights: [
-        "Designed layouts in Figma and built 1440px HTML drafts for 8+ real estate pages on a shared design system.",
-        "Implemented approved designs on the Snapps (Duda) site builder, from draft to live deployment.",
-        "Fixed responsive issues caused by the builder re-applying inline styles, using grid and breakpoint settings.",
-        "Handled backend and server work: the PHP and MySQL MLS listing system, MLS data integration, and DNS and Cloudflare diagnostics.",
-        "Managed a real estate CRM, keeping listings, client records, and workflow updates accurate.",
       ],
     },
   ],
